@@ -15,7 +15,7 @@ import { awards } from "../../data/data";
 import { steps } from "../../data/data";
 import EMICalculator from "../../componentsTwo/EMI/EMICalculator";
 import { partners } from "../../data/data";
-import TestimonialSlider from "../../componentsTwo/testimonial/testimonialSlider";
+import TestimonialSlider from "../../componentsTwo/testimonial/TestimonialSlider";
 import { Link } from "react-router-dom";
 import BlogPosts from "../../componentsTwo/Blog/BlogPosts";
 
