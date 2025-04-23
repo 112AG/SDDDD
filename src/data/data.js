@@ -1,0 +1,377 @@
+// data.js
+
+import One from '../assets/TopSlider/One.png';
+import Two from '../assets/TopSlider/Two.png';
+import Three from '../assets/TopSlider/Three.png';
+import Four from '../assets/TopSlider/Four.png';
+import Five from '../assets/TopSlider/Five.jpg';
+
+  import SBI from '../assets/Partners/SBI.png';
+  import HDFC from '../assets/Partners/HDFC.png'
+  import ICICI from '../assets/Partners/ICICI.png'
+  import BajajFin from '../assets/Partners/BajajFin.png'
+  import Axis from '../assets/Partners/Axis.png'
+  import LIC from '../assets/Partners/LIC.png'
+  import Kotak from '../assets/Partners/Kotak.png'
+  import IDFC from '../assets/Partners/IDFC.png'
+  import AdityaBirla from '../assets/Partners/AdityaBirla.png'
+  import TataCap from '../assets/Partners/TataCapital.png'
+  import TruHome from '../assets/Partners/TruHome.png'
+  import Yes from '../assets/Partners/Yes.png'
+  import DBS from '../assets/Partners/DBS.png'
+  import DMI from '../assets/Partners/DMI.png'
+  import IOB from '../assets/Partners/IOB.png'
+  import Chola from '../assets/Partners/Chola.png'
+  import Larsen from '../assets/Partners/Larsen.png'
+  import Poonawala from '../assets/Partners/Poonawala.png'
+  import BOI from '../assets/Partners/BOI.png'
+  import Canara from '../assets/Partners/Canara.png'
+  import BOB from '../assets/Partners/BOB.png'
+  import Credit from '../assets/Partners/Credit.png'
+  import Royal from '../assets/Partners/Royal.png'
+  import Standard from '../assets/Partners/Standard.png'
+  import AU from '../assets/Partners/AU.png'
+  import Jana from '../assets/Partners/Jana.png'
+  import Indusland from '../assets/Partners/Indusland.png'
+  import Bandhan from '../assets/Partners/Bandhan.png'
+  import NeoGrowth from '../assets/Partners/NeoGrowth.png'
+  import Godrej from '../assets/Partners/Godrej.png'
+
+// Partners
+export const partners = [
+  {
+    name: "SBI",
+    logo: SBI
+  },
+  {
+    name: "HDFC",
+    logo: HDFC
+  },
+  {
+    name: "ICICI", 
+    logo: ICICI
+  },
+  {
+    name: "Bajaj Finserv",
+    logo: BajajFin
+  },
+  {
+    name: "Axis Bank",
+    logo: Axis
+  },
+  {
+    name: "LIC",
+    logo: LIC
+  },
+  {
+    name: "Kotak",
+    logo: Kotak
+  },
+  {
+    name: "IDFC First Bank",
+    logo: IDFC
+  },
+  {
+    name: "Aditya Birla",
+    logo: AdityaBirla
+  },
+  {
+    name: "Tata Capital",
+    logo: TataCap
+  },
+  {
+    name: "TruHome",
+    logo: TruHome
+  },
+  {
+    name: "Yes Bank",
+    logo: Yes
+  },
+  {
+    name: "DBS",
+    logo: DBS
+  },
+  {
+    name: "DMI Finance",
+    logo: DMI
+  },
+  {
+    name: "Indian Overseas Bank",
+    logo: IOB
+  },
+  {
+    name: "Chola",
+    logo: Chola
+  },
+  {
+    name: "L&T Finance",
+    logo: Larsen
+  },
+  {
+    name: "Poonawala Fincorp",
+    logo: Poonawala
+  },
+  {
+    name: "Bank of India",
+    logo: BOI
+  },
+  {
+    name: "Canara Bank",
+    logo: Canara
+  },
+  {
+    name: "Bank of Baroda",
+    logo: BOB
+  },
+  {
+    name: "Credit Fair",
+    logo: Credit
+  },
+  {
+    name: "Royal Sundaram",
+    logo: Royal
+  },
+  {
+    name: "Standard Chartered",
+    logo: Standard
+  },
+  {
+    name: "AU Small Finance Bank",
+    logo: AU
+  },
+  {
+    name: "Jana Small Finance Bank",
+    logo: Jana
+  },
+  {
+    name: "IndusInd Bank",
+    logo: Indusland
+  },
+  {
+    name: "Bandhan Bank",
+    logo: Bandhan
+  },
+  {
+    name: "NeoGrowth",
+    logo: NeoGrowth
+  },
+  {
+    name: "Godrej Housing Finance",
+    logo: Godrej
+  }
+]
+
+
+export const data = [
+  {
+    title: "Business Loans",
+    tagline: "Fuel Your Business with the Capital You Need",
+    description:
+      "Whether you’re looking to grow your business, purchase new equipment, or manage working capital, SD Finance offers quick and easy business loan solutions. With flexible repayment plans and competitive interest rates, we are here to support your business’s growth.",
+    whyChoose: [
+      "Fast Approval",
+      "Affordable Rates",
+      "Flexible Repayment Options",
+      "Easy Documentation"
+    ],
+    typesOffered: [
+      "Working Capital Loans",
+      "Business Expansion Loans",
+      "Equipment Financing"
+    ],
+    image: One
+  },
+  {
+    title: "Home Loans",
+    tagline: "Make Your Dream Home a Reality",
+    description:
+      "At SD Finance, we understand how important it is to find the perfect home. Our home loans are designed to provide flexible, affordable financing with easy approval processes, helping you step into your dream home without the stress.",
+    whyChoose: [
+      "Low-Interest Rates",
+      "Flexible EMI Options",
+      "Quick Disbursement",
+      "Expert Guidance"
+    ],
+    image: Two
+  },
+  {
+    title: "Personal Loans",
+    tagline: "Get the Funds You Need, When You Need Them",
+    description:
+      "Whether it’s for personal expenses, travel, or unexpected costs, SD Finance’s personal loans are designed to help you manage your finances with ease.",
+    whyChoose: [
+      "No Collateral Required",
+      "Flexible Repayment Terms",
+      "Competitive Rates"
+    ],
+    image: Three
+  },
+  {
+    title: "Loan Against Property",
+    tagline: "Unlock the Value of Your Property",
+    description:
+      "Secure a loan using your property with SD Finance’s Loan Against Property options. Whether it’s for business expansion, home improvements, or personal needs, we provide fast approval and flexible repayment terms, so you can access the funds you need while keeping your property secure.",
+    whyChoose: [
+      "Quick Access to Funds",
+      "Flexible Repayment Plans",
+      "Competitive Rates"
+    ],
+    image: Five
+  },
+  {
+    title: "Auto Loans",
+    tagline: "Drive Your Dream Car with SD Finance",
+    description:
+      "With SD Finance, buying your dream car is just a few steps away. Our auto loans come with quick approval, low-interest rates, and flexible EMI options to make your car purchase easy and affordable.",
+    whyChoose: [
+      "Quick Approvals",
+      "Competitive Interest Rates",
+      "Flexible Terms"
+    ],
+    image: Four
+  },
+];
+
+
+// Awards
+export const awards = [
+  { title: 'Best Loan', subtitle: 'Provider' },
+  { title: 'Best Third Party', subtitle: 'finance Provider' },
+  { title: 'Best Loan', subtitle: 'Provider' },
+  { title: 'Best Third Party', subtitle: 'Provider' },
+];
+
+
+// 
+  export const steps = [
+    {
+      id: 1,
+      title: "Choose Your Loan Product",
+      description: "More information about our loan products and options.",
+    },
+    {
+      id: 2,
+      title: "Submit Your Application",
+      description: "Information about the application process and requirements.",
+    },
+    {
+      id: 3,
+      title: "Quick Processing & Approval",
+      description: "Details about our processing times and approval criteria.",
+    },
+    {
+      id: 4,
+      title: "Funds Disbursed",
+      description: "Information about fund disbursement processes and timelines.",
+    },
+  ];
+
+  // Testimonials
+  export const testimonials = [
+    {
+      stars: 5,
+      text:
+        "Working with SD Finance was a game-changer for our business. Their expert guidance and flexible loan options helped us expand our operations and achieve our goals. Highly recommended!",
+      name: "Nitish Pathak",
+      company: "Realistic Engineering",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "SD Finance provided us with a tailored financial solution that met our unique needs. Their team is professional, responsive, and truly cares about their clients' success. We're grateful for their support!",
+      name: "Priya Jain",
+      company: "ABC Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Follow Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Working with SD Finance was a game-changer for our business. Their expert guidance and flexible loan options helped us expand our operations and achieve our goals. Highly recommended!",
+      name: "Nitish Pathak",
+      company: "Realistic Engineering",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "SD Finance provided us with a tailored financial solution that met our unique needs. Their team is professional, responsive, and truly cares about their clients' success. We're grateful for their support!",
+      name: "Priya Jain",
+      company: "ABC Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Follow Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+  ];
+
+  // Blog Posts
+
+  export const blogs = [
+    {
+      id: 1,
+      date: 'July 4, 2021',
+      title: 'Achieve Financial Stability With A Budget.',
+      description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      image: 'https://img.freepik.com/free-vector/money-background-design_1078-123.jpg?t=st=1745378806~exp=1745382406~hmac=b3d6014a8847564350538aac72402b889833dca498b62921f8a9d2cb9610d047&w=826',
+    },
+    {
+      id: 2,
+      date: 'July 4, 2021',
+      title: 'Achieve Financial Stability With A Budget.',
+      description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      image: 'https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+      id: 3,
+      date: 'July 4, 2021',
+      title: 'Achieve Financial Stability With A Budget.',
+      description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      image: 'https://images.unsplash.com/photo-1713946598467-fcf9332c56ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+  ];

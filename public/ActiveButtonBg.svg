@@ -1,0 +1,19 @@
+<!-- /public/ActiveButtonBg.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="592" height="376" viewBox="0 0 592 376" fill="none">
+  <g filter="url(#filter0_d_52_388)">
+    <path d="M128.793 156C128.793 139.431 142.224 126 158.793 126H433.793C450.362 126 463.793 139.431 463.793 156V201.567C463.793 218.136 450.362 231.567 433.793 231.567H344.231C340.481 231.567 336.764 232.271 333.272 233.641L307.397 243.795C300.498 246.502 292.841 246.56 285.902 243.958L257.961 233.478C254.593 232.215 251.024 231.567 247.426 231.567H158.793C142.224 231.567 128.793 218.136 128.793 201.567V156Z" fill="white"/>
+    <path d="M130.293 156C130.293 140.26 143.053 127.5 158.793 127.5H433.793C449.533 127.5 462.293 140.26 462.293 156V201.567C462.293 217.307 449.533 230.067 433.793 230.067H344.231C340.293 230.067 336.39 230.806 332.724 232.244L306.849 242.399C300.295 244.97 293.021 245.025 286.429 242.553L258.488 232.074C254.951 230.747 251.204 230.067 247.426 230.067H158.793C143.053 230.067 130.293 217.307 130.293 201.567V156Z" stroke="#1AD079" stroke-width="3"/>
+  </g>
+  <defs>
+    <filter id="filter0_d_52_388" x="0.792969" y="0" width="591" height="375.868" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="64"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_52_388"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_52_388" result="shape"/>
+    </filter>
+  </defs>
+</svg>
