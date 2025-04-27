@@ -207,7 +207,7 @@ export const data = [
     image: Three
   },
   {
-    title: "Against Property",
+    title: "Property Loan",
     tagline: "Unlock the Value of Your Property",
     description:
       "Secure a loan using your property with SD Finance’s Loan Against Property options. Whether it’s for business expansion, home improvements, or personal needs, we provide fast approval and flexible repayment terms, so you can access the funds you need while keeping your property secure.",

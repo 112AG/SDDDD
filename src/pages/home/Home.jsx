@@ -34,7 +34,11 @@ function Home() {
         <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 sm:px-6">
           {/* left */}
           <div className="relative flex items-center justify-center h-[532px]">
-            <img src={SDMan} alt="EMP" className="absolute bottom-0 object-cover h-[522px]" />
+            <img
+              src={SDMan}
+              alt="EMP"
+              className="absolute bottom-0 object-cover h-[522px]"
+            />
             <img src={Decoration} alt="BG" className="h-[368px] w-[364px]" />
           </div>
           {/* RIght */}
@@ -95,13 +99,13 @@ function Home() {
       </div>
 
       {/* Section 2: Loan Tabs */}
-      <section className="w-full py-12">
+      <section className="w-full py-8 md:py-11">
         <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
       </section>
 
       {/* Section 3: Why Us */}
-      <section className="w-full py-12">
+      <section className="w-full ">
         <TopHeader top="Why us" subHead="Why SD Financials?" />
         <WhyUs />
       </section>

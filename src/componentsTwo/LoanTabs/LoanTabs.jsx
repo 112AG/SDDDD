@@ -2,18 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import { data } from "../../data/data";
 import Button from "../../components/Button";
 import "./loanTabs.css";
- 
+
 function LoanTabs() {
   const [getOption, setGetOption] = useState({ data: "", idx: "" });
   const [loanProducts, setLoanProducts] = useState(data);
 
-  const intervalRef = useRef(null); // to store the interval id
+  const intervalRef = useRef(null);
 
   const selected = loanProducts.find((item) => item.title === getOption.data);
 
   function handleOption(data, idx) {
     setGetOption({ data: data.title, idx: idx });
-    resetAutoSlide(); // reset timer if user clicks
+    resetAutoSlide();
   }
 
   function startAutoSlide() {
@@ -30,7 +30,7 @@ function LoanTabs() {
           idx: nextIdx,
         };
       });
-    }, 7000); // Change every 5 seconds
+    }, 7000);
   }
 
   function resetAutoSlide() {
@@ -44,38 +44,41 @@ function LoanTabs() {
   }, []);
 
   return (
-    <div className="w-full h-full pt-4 sm:pt-8 lg:pt-10">
+    <div className="w-full h-full pt-4 sm:pt-6 lg:pt-8">
       <div className="animate-fade mx-auto max-w-6xl">
-        
         {/* Tabs */}
-         
-        <div className="flex items-center justify-center flex-wrap gap-4">
-  {loanProducts.map((data, idx) => (
-    <div
-      onClick={() => handleOption(data, idx)}
-      key={idx}
-      className={`
-        ${getOption.idx === "" 
-          ? (idx === 0 ? "tab-active" : "tab-default") 
-          : (getOption.idx === idx ? "tab-active" : "tab-default")
+
+        <div className="flex items-center justify-center flex-wrap gap-4 max-w-6xl">
+          {loanProducts.map((data, idx) => (
+            <div
+              onClick={() => handleOption(data, idx)}
+              key={idx}
+              className={`
+        ${
+          getOption.idx === ""
+            ? idx === 0
+              ? "tab-active"
+              : "tab-default"
+            : getOption.idx === idx
+            ? "tab-active"
+            : "tab-default"
         } cursor-pointer font-semibold
       `}
-    >
-      {data.title}
-    </div>
-  ))}
-</div>
-
+            >
+              {data.title}
+            </div>
+          ))}
+        </div>
 
         {/* Content */}
         {selected ? (
           <div
             key={selected.title}
-            className="flex flex-col-reverse sm:flex-row items-center justify-around px-4 sm:px-6 py-14 gap-6 animate-fade"
+            className="max-w-6xl flex flex-col-reverse md:flex-row items-center justify-around px-4 sm:px-6 py-14 gap-6 animate-fade"
           >
             {/* Left Content */}
             <div
-              className="w-full sm:max-w-[539px] bg-white rounded-[34px] py-6 px-[6vw] pb-11 min-h-[354px]"
+              className="h-[454px] w-[573px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <h1 className="text-2xl sm:text-3xl font-bold">
@@ -97,7 +100,7 @@ function LoanTabs() {
 
             {/* Image */}
             <div
-              className="w-full sm:max-w-[339px] bg-white rounded-[34px] overflow-hidden min-h-[354px]"
+              className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
