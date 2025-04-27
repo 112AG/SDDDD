@@ -113,11 +113,11 @@ function LoanTabs() {
         ) : (
           <div
             key={loanProducts[0].title}
-            className="flex flex-col-reverse sm:flex-row justify-around items-center gap-6 px-4 sm:px-6 py-14 animate-fade"
+            className="max-w-6xl flex flex-col-reverse md:flex-row items-center justify-around px-4 sm:px-6 py-14 gap-6 animate-fade"
           >
             {/* Left Default */}
             <div
-              className="w-full sm:max-w-[539px] bg-white rounded-[34px] py-6 px-[6vw] pb-11 min-h-[354px]"
+              className="h-[454px] w-[573px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <h1 className="text-2xl sm:text-3xl font-bold">
@@ -139,12 +139,12 @@ function LoanTabs() {
 
             {/* Right Default */}
             <div
-              className="w-full sm:max-w-[339px] bg-white rounded-[34px] min-h-[354px] overflow-hidden"
+              className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
                 src={loanProducts[0].image}
-                className="w-full h-full object-cover"
+                className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden object-cover"
                 alt={loanProducts[0].title}
               />
             </div>

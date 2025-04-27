@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div className="w-full bg-[#f6f8fb]">
-      {/* Section 1: Hero */}
+      {/* Section 1: Hero ✅*/} 
       <div className="w-full bg-[#003274]">
         <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 sm:px-6">
           {/* left */}
@@ -98,7 +98,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Section 2: Loan Tabs */}
+      {/* Section 2: Loan Tabs ✅*/} 
       <section className="w-full py-8 md:py-11">
         <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
