@@ -107,16 +107,16 @@ function Home() {
       </section>
 
       {/* Section 4: Achievements */}
-      <section className="w-full py-12 bg-[#003c71]">
+      <section className="w-full sm:py-6 py-4 ">
         <TopHeader
           top="Achievements"
           subHead="Our Achievements & Certificates"
         />
-        <p className="text-center text-white text-lg mt-4 mb-10">
+        <p className="text-center text-black text-lg mt-4 mb-10">
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 bg-[#003c71] w-full py-12">
           {awards.map((award, index) => (
             <div key={index} className="text-center text-white w-[140px]">
               <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
