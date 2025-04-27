@@ -13,8 +13,8 @@ function Button({btn, link}) {
               px-5
               py-2
               rounded-md
-              shadow-[4px_4px_0_#1AD079]
-              hover:shadow-[2px_2px_0_#1AD079]
+              shadow-[-3px_3px_0_#1AD079]
+              hover:shadow-[-2px_2px_0_#1AD079]
               active:shadow-none
               transition-all
               text-sm

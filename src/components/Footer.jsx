@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#f6f8fb] text-gray-800 px-6 py-12 text-sm border-t border-gray-300">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div className="flex flex-wrap items-center justify-between mx-auto gap-8">
         
         {/* Menu */}
         <div>
@@ -45,7 +45,7 @@ export default function Footer() {
         {/* Contact Information */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Contact Information</h3>
-          <ul className="space-y-3">
+          <ul className="">
             <li className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#109E73]" /> +91 9106531465
             </li>

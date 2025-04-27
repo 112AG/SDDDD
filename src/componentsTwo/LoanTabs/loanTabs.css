@@ -10,4 +10,66 @@
   .animate-fade {
     animation: fade 1.4s ease-out;
   }
+  /* loanTabs.css */
+
+  .tab-active {
+    background-image: url('../../assets/ActiveButtonBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 184px; /* Match inactive tab width */
+    height: 52px; /* Match inactive tab height */
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+    padding: 35px 24px; /* Remove extra padding */
+  }
   
+
+.tab-default {
+  width: 184px;
+  height: 52px;
+  border: 2px solid white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tab-active {
+    width: 180px;
+    height: 50px;
+    padding: 20px 0;
+    background-size: contain;
+  }
+
+  .tab-default {
+    width: 160px;
+    height: 45px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-active {
+    width: 150px;
+    height: 45px;
+    padding: 15px 0;
+    font-size: 12px;
+  }
+
+  .tab-default {
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+  }
+}

@@ -1,61 +1,52 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
+
 import Decoration from "../../assets/homeAssets/Decoration.png";
 import SDMan from "../../assets/homeAssets/SDMan.png";
 import clientOne from "../../assets/homeAssets/client1.jpg";
 import clientTwo from "../../assets/homeAssets/client2.jpg";
 import clientThree from "../../assets/homeAssets/client3.jpg";
+import Award from "../../assets/homeAssets/Award.png";
+import HowItWorks from "../../assets/homeAssets/HowItWorks.png";
+
 import TopHeader from "../../components/TopHeader";
 import LoanTabs from "../../componentsTwo/LoanTabs/LoanTabs";
 import Button from "../../components/Button";
 import WhyUs from "../../componentsTwo/WhyUS/WhyUs";
-import Award from "../../assets/homeAssets/Award.png";
-import HowItWorks from "../../assets/homeAssets/HowItWorks.png";
-import { awards } from "../../data/data";
-import { steps } from "../../data/data";
 import EMICalculator from "../../componentsTwo/EMI/EMICalculator";
-import { partners } from "../../data/data";
 import TestimonialSlider from "../../componentsTwo/testimonial/TestimonialSlider";
-import { Link } from "react-router-dom";
 import BlogPosts from "../../componentsTwo/Blog/BlogPosts";
+
+import { awards, steps, partners } from "../../data/data";
 
 function Home() {
   const [expandedStep, setExpandedStep] = useState(1);
+
   const toggleStep = (id) => {
     setExpandedStep((prev) => (prev === id ? null : id));
   };
 
   return (
     <div className="w-full bg-[#f6f8fb]">
-      {/* Section One - Hero */}
-      <div className="bg-[#013775] py-12">
-        <div className="h-screen w-full max-w-6xl mx-auto  px-4 flex sm:flex-row flex-col-reverse justify-around">
-          {/* Left block: Overlapping images */}
-          <div className="w-[100%] h-full sm:w-[40%] relative flex items-center justify-center">
-            {/* Decorative shape/rectangle */}
-            <img
-              src={Decoration}
-              alt="linearRectangle"
-              className="absolute bottom-0 h-[304px] sm:h-[300px] md:h-[350px] lg:h-[434px] 2xl:h-[589px]"
-            />
-            {/* SDMan image */}
-            <img
-              src={SDMan}
-              alt="Our Employee"
-              className="absolute bottom-0 h-[342px] sm:h-[340px] md:h-[394px] lg:h-[494px] 2xl:h-[669px]"
-            />
+      {/* Section 1: Hero */}
+      <div className="w-full bg-[#003274]">
+        <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 sm:px-6">
+          {/* left */}
+          <div className="relative flex items-center justify-center h-[532px]">
+            <img src={SDMan} alt="EMP" className="absolute bottom-0 object-cover h-[522px]" />
+            <img src={Decoration} alt="BG" className="h-[368px] w-[364px]" />
           </div>
-
-          {/* Right block: Text + button + clients label */}
+          {/* RIght */}
           <div className="w-[100%] sm:w-[50%] md:w-[40%] sm:h-full flex flex-col items-start justify-center pt-4 sm:pt-0">
-            <p className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium sm:pb-0 pb-1.5">
+            <p className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium pb-2">
               Welcome to SD Financial Services
             </p>
-            <h1 className="text-white text-[32px]  sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-none">
+            <h1 className="text-white text-[32px] sm:text-[36px]  lg:text-[44px] font-bold sm:leading-[42px] md:leading-[52px]">
               Where <span className="text-[#F4C520]">Trust</span> Meets{" "}
               <span className="text-[#1AD079]">Financial</span> Excellence
             </h1>
-            <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed py-1.5 sm:py-0">
+            <p className="text-white opacity-[60%] text-[11px] sm:text-[13px] md:text-[15px] leading-tight pt-4">
               Simplifying Financial Solutions for Your Business, Home, and
               Health. At SD Financial Services, we provide a range of financial
               products tailored to help you manage and grow your business, buy
@@ -103,193 +94,146 @@ function Home() {
         </div>
       </div>
 
-      {/* Section Two - Services */}
-      <div className="w-full py-8 md:py-12">
-        <TopHeader top={"Who we are"} subHead="Our Main Service" />
+      {/* Section 2: Loan Tabs */}
+      <section className="w-full py-12">
+        <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
-      </div>
+      </section>
 
-      {/* Section Three - Why Us */}
-      <div className="py-8 md:py-12">
-        <TopHeader top={"Why us"} subHead="Why SD Financs?" />
+      {/* Section 3: Why Us */}
+      <section className="w-full py-12">
+        <TopHeader top="Why us" subHead="Why SD Financials?" />
         <WhyUs />
-      </div>
+      </section>
 
-      {/* Section Four - Achievements */}
-      <div className="py-8 md:py-12">
+      {/* Section 4: Achievements */}
+      <section className="w-full py-12 bg-[#003c71]">
         <TopHeader
-          top={"Achievements"}
+          top="Achievements"
           subHead="Our Achievements & Certificates"
         />
-        <p className="text-center px-4 py-4 text-base md:text-lg pb-8 md:pb-10">
+        <p className="text-center text-white text-lg mt-4 mb-10">
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
-
-        <section className="bg-[#003c71] py-8 md:py-10 px-4 flex flex-wrap justify-center gap-6 md:gap-10">
+        <div className="flex flex-wrap justify-center gap-6">
           {awards.map((award, index) => (
-            <div
-              key={index}
-              className="text-center w-[130px] sm:w-[148px] text-white flex flex-col items-center"
-            >
-              <img 
-                src={Award} 
-                alt="Awards" 
-                className="h-[90px] sm:h-[112px] mb-2" 
-              />
-              <div className="font-semibold text-base sm:text-lg leading-tight">
+            <div key={index} className="text-center text-white w-[140px]">
+              <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
+              <h4 className="font-semibold leading-tight">
                 {award.title}
                 <br />
                 {award.subtitle}
-              </div>
+              </h4>
             </div>
           ))}
-        </section>
-      </div>
-
-      {/* Section Five - How it works */}
-      <div className="py-8 md:py-12">
-        <div className="pb-6 md:pb-10">
-          <TopHeader top={"Process"} subHead="How it works" />
         </div>
+      </section>
 
-        <div className="flex flex-col md:flex-row max-w-5xl mx-auto items-center md:items-start justify-between p-4 w-full gap-8">
-          {/* Left side - Image */}
-          <div className="w-full md:w-5/12 mb-8 md:mb-0">
-            <div className="rounded-[34px] overflow-hidden">
-              <img
-                src={HowItWorks}
-                alt="How It Works"
-                className="w-full object-cover"
-              />
-            </div>
+      {/* Section 5: How It Works */}
+      <section className="w-full py-12">
+        <TopHeader top="Process" subHead="How it works" />
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 mt-10">
+          {/* Image */}
+          <div className="w-full md:w-5/12">
+            <img
+              src={HowItWorks}
+              alt="How It Works"
+              className="rounded-3xl object-cover"
+            />
           </div>
-
-          {/* Right side - Steps */}
-          <div className="w-full md:w-7/12 lg:w-6/12 pt-0 md:pt-2">
+          {/* Steps */}
+          <div className="w-full md:w-7/12">
             {steps.map((step) => (
               <div
-                className="mb-4 md:mb-6 p-4 md:p-6 bg-white rounded-[24px] md:rounded-[34px]"
-                style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
                 key={step.id}
+                className="bg-white rounded-2xl p-6 mb-4 cursor-pointer shadow-md"
                 onClick={() => toggleStep(step.id)}
               >
-                <div className="flex items-center justify-between mb-1 cursor-pointer">
-                  <h3 className="font-semibold text-sm md:text-base">
+                <div className="flex justify-between items-center">
+                  <h3 className="font-semibold text-lg">
                     {step.id}. {step.title}
                   </h3>
-                  <div className="flex items-center gap-2">
-                    <i
-                      className={`ri-arrow-${
-                        expandedStep === step.id ? "down" : "left"
-                      }-s-line ${
-                        expandedStep === step.id
-                          ? "text-white bg-[#1AD079]"
-                          : "bg-white text-[#1AD079]"
-                      } border border-[#1AD079] h-[24px] w-[24px] flex items-center justify-center text-xl rounded-full transition-all duration-300`}
-                    />
-                  </div>
+                  <i
+                    className={`ri-arrow-${
+                      expandedStep === step.id ? "down" : "left"
+                    }-s-line text-[#1AD079] text-2xl`}
+                  />
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    expandedStep === step.id
-                      ? "max-h-40 opacity-100 mt-2"
-                      : "max-h-0 opacity-0"
+                  className={`transition-all overflow-hidden ${
+                    expandedStep === step.id ? "max-h-40 mt-2" : "max-h-0"
                   }`}
                 >
-                  <p className="text-gray-600 text-xs md:text-sm p-2 md:p-3 rounded">
-                    {step.description}
-                  </p>
+                  <p className="text-gray-600 mt-2">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Section Six - EMI Calculator */}
-      <div className="py-8 md:py-12">
+      {/* Section 6: EMI Calculator */}
+      <section className="w-full py-12">
         <EMICalculator />
-      </div>
+      </section>
 
-      {/* Section Seven - Partners */}
-      <div className="py-8 md:py-12">
-        <TopHeader
-          top={"Partners"}
-          subHead="Trusted by Companies and Partners"
-        />
-        <div className="py-6 md:py-10 px-4 max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
-            {partners.map((bank, index) => (
-              <div
-                key={index}
-                className="bg-white flex items-center justify-center p-3 md:p-4 rounded-xl shadow-sm hover:shadow-md transition"
-              >
-                <img
-                  src={bank.logo}
-                  alt={bank.name}
-                  className="max-h-6 sm:max-h-8 object-contain"
-                />
-              </div>
-            ))}
-          </div>
+      {/* Section 7: Partners */}
+      <section className="w-full py-12">
+        <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="bg-white p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-10 object-contain"
+              />
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      {/* Section Eight - Testimonials */}
-      <div className="py-8 md:py-12">
+      {/* Section 8: Testimonials */}
+      <section className="w-full py-12">
         <TopHeader
-          top={"Testimonials"}
-          subHead={`Happy Clients with Appropriate Financing`}
+          top="Testimonials"
+          subHead="Happy Clients with Appropriate Financing"
         />
-        <p className="text-center px-4 py-3 md:py-4 text-base md:text-lg pb-6 md:pb-10 text-[#7F7F8C]">
-          Experience and quality guaranteed modern production <br className="hidden sm:block" />
-          plant and state-of-the-art.
+        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-10">
+          Experience and quality guaranteed through modern production
+          facilities.
         </p>
-
         <TestimonialSlider />
-      </div>
+      </section>
 
-      {/* Section Nine - Blog Posts */}
-      <div className="py-8 md:py-12">
+      {/* Section 9: Blog */}
+      <section className="w-full py-12">
         <BlogPosts />
-      </div>
+      </section>
 
-      {/* Section Ten - CTA */}
-      <div className="py-8 md:py-12 px-4">
-        <div className="bg-[#003366] text-white rounded-xl md:rounded-2xl px-4 sm:px-6 py-8 md:py-12 max-w-4xl mx-auto text-center relative overflow-hidden">
-          <p className="absolute top-3 left-4 md:left-6 font-semibold text-[#1D4ED8] text-sm md:text-base">Register</p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-            Get In Touch With Us
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg text-gray-200 max-w-xl mx-auto mb-5 md:mb-6 px-2">
-            Ready to apply or have questions? Our team of experts is here to
-            help. Reach out to us today to get personalized financial solutions.
+      {/* Section 10: CTA */}
+      <section className="py-12 px-4">
+        <div className="bg-[#003366] text-white rounded-2xl p-10 text-center relative overflow-hidden max-w-4xl mx-auto">
+          <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
+            Register
+          </p>
+          <h2 className="text-3xl font-bold mb-4">Get In Touch With Us</h2>
+          <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
+            Ready to apply or have questions? Our team is here to help. Reach
+            out today for personalized financial solutions.
           </p>
           <Link
             to="/contact"
-            className="
-              relative
-              inline-block
-              bg-[#F4C520]
-              text-black
-              font-semibold
-              px-4
-              sm:px-5
-              py-2
-              rounded-md
-              shadow-[-2px_2px_0_#1AD079]
-              hover:shadow-[-1px_1px_0_#1AD079]
-              active:shadow-none
-              transition-all
-              text-sm
-              sm:text-base
-            "
+            className="inline-block bg-[#F4C520] text-black font-semibold px-6 py-3 rounded-md shadow-md hover:shadow-lg transition"
           >
             Contact Us
           </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import vite from "../assets/vite.svg";
-import logo from "../assets/images/white.svg";
-import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; // Hamburger icons
+import logo from "../assets/images/Layer1.svg";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -10,7 +10,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 4);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,10 +26,10 @@ const Header = () => {
   const links = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    { to: "/category", label: "Service" },
+    { to: "/category", label: "Services" },
     { to: "/contact", label: "Contact" },
     { to: "/blog", label: "Blog" },
-    { to: "/testimonials", label: "Testimonial" },
+
   ];
 
   return (
@@ -38,13 +38,13 @@ const Header = () => {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] mx-auto flex justify-between items-center px-6 md:px-14 lg:px-22 xl:px-12 py-4 ">
         {/* Logo */}
         <div className="flex items-center">
           <img
             src={scrolled ? vite : logo}
             alt="SD Financial Logo"
-            className="h-12 transition-all duration-300"
+            className="h-[48px] sm:h-[54px] transition-all duration-300"
           />
         </div>
 
@@ -59,7 +59,7 @@ const Header = () => {
               key={to}
               to={to}
               className={({ isActive }) =>
-                `${isActive ? activeLinkClass : ""}`
+                `${isActive ? activeLinkClass : ""} text-xl`
               }
             >
               {label}
@@ -71,11 +71,11 @@ const Header = () => {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className={`text-2xl transition-colors ${
+            className={`text-[32px] transition-colors ${
               scrolled ? "text-black" : "text-white"
             }`}
           >
-            {menuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
+            <HiOutlineMenu />
           </button>
         </div>
       </div>
@@ -83,15 +83,15 @@ const Header = () => {
       {/* Mobile Navigation Menu */}
 {/* Mobile Navigation Menu */}
 <div
-  className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+  className={`fixed top-0 right-0 w-[54%] h-full bg-white shadow-lg transform transition-transform duration-300 z-40 ${
     menuOpen ? "translate-x-0" : "translate-x-full"
   }`}
 >
   {/* Close Button */}
-  <div className="flex justify-end p-4">
+  <div className="flex justify-end p-6">
     <button
       onClick={() => setMenuOpen(false)}
-      className="text-3xl text-black"
+      className="text-[32px] text-black"
       aria-label="Close menu"
     >
       <HiOutlineX />
@@ -99,7 +99,7 @@ const Header = () => {
   </div>
 
   {/* Menu Links */}
-  <div className="flex flex-col gap-6 px-6 text-black font-medium">
+  <div className="flex flex-col gap-6 px-12 py-4 text-black font-medium text-[18px]">
     {links.map(({ to, label }) => (
       <NavLink
         key={to}

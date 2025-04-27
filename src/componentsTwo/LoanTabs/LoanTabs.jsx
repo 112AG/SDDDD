@@ -1,107 +1,142 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { data } from "../../data/data";
 import Button from "../../components/Button";
 import "./loanTabs.css";
-// import ActiveSVG from "../../../public/ActiveButtonBg.svg";
-
+ 
 function LoanTabs() {
   const [getOption, setGetOption] = useState({ data: "", idx: "" });
-
   const [loanProducts, setLoanProducts] = useState(data);
+
+  const intervalRef = useRef(null); // to store the interval id
 
   const selected = loanProducts.find((item) => item.title === getOption.data);
 
   function handleOption(data, idx) {
-    setGetOption(() => ({
-      data: data.title,
-      idx: idx,
-    }));
+    setGetOption({ data: data.title, idx: idx });
+    resetAutoSlide(); // reset timer if user clicks
   }
+
+  function startAutoSlide() {
+    intervalRef.current = setInterval(() => {
+      setGetOption((prev) => {
+        let nextIdx;
+        if (prev.idx === "") {
+          nextIdx = 1;
+        } else {
+          nextIdx = (prev.idx + 1) % loanProducts.length;
+        }
+        return {
+          data: loanProducts[nextIdx].title,
+          idx: nextIdx,
+        };
+      });
+    }, 7000); // Change every 5 seconds
+  }
+
+  function resetAutoSlide() {
+    clearInterval(intervalRef.current);
+    startAutoSlide();
+  }
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => clearInterval(intervalRef.current);
+  }, []);
 
   return (
     <div className="w-full h-full pt-4 sm:pt-8 lg:pt-10">
       <div className="animate-fade mx-auto max-w-6xl">
-        <div className="flex items-center justify-center flex-wrap gap-3 ">
-          {loanProducts.map((data, idx) => (
-            <div
-              onClick={() => handleOption(data, idx)}
-              className={`py-2 sm:py-[12px] px-4 sm:px-6 text-xs sm:text-xl border-2 ${
-                getOption.idx === ""
-                  ? idx === 0
-                    ? "border-[#1bd07a] "
-                    : "border-white"
-                  : getOption.idx === idx
-                  ? "border-[#1bd07a] "
-                  : "border-white"
-              } bg-[#f6f8fb] rounded-xl font-semibold`}
-              key={idx}
-            >
-              {data.title}
-            </div>
-          ))}
-        </div>
+        
+        {/* Tabs */}
+         
+        <div className="flex items-center justify-center flex-wrap gap-4">
+  {loanProducts.map((data, idx) => (
+    <div
+      onClick={() => handleOption(data, idx)}
+      key={idx}
+      className={`
+        ${getOption.idx === "" 
+          ? (idx === 0 ? "tab-active" : "tab-default") 
+          : (getOption.idx === idx ? "tab-active" : "tab-default")
+        } cursor-pointer font-semibold
+      `}
+    >
+      {data.title}
+    </div>
+  ))}
+</div>
 
+
+        {/* Content */}
         {selected ? (
           <div
             key={selected.title}
-            className="flex justify-around px-4 sm:px-6 py-14 animate-fade flex-col sm:flex-row items-center gap-4 sm:gap-0"
+            className="flex flex-col-reverse sm:flex-row items-center justify-around px-4 sm:px-6 py-14 gap-6 animate-fade"
           >
+            {/* Left Content */}
             <div
-              className="max-w-[539px] bg-white rounded-[34px] py-6 px-[4vw] pb-11 min-h-[354px]"
+              className="w-full sm:max-w-[539px] bg-white rounded-[34px] py-6 px-[6vw] pb-11 min-h-[354px]"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
-              <h1 className="text-3xl font-bold">{selected.tagline}</h1>
-              <p className="text-[12px] text-[#102b3e99] py-2">
+              <h1 className="text-2xl sm:text-3xl font-bold">
+                {selected.tagline}
+              </h1>
+              <p className="text-sm text-[#102b3e99] py-2">
                 {selected.description}
               </p>
               <ul className="pb-6">
-                {selected.whyChoose.map((data) => (
-                  <li className="py-1 flex items-center justify-start gap-2">
-                    <i className="ri-check-line text-[#1bd07a] bg-[#1bd0791d] h-[24px] w-[24px] rounded-full p-0.5 flex items-center justify-center"></i>{" "}
-                    <span className="text-[#102b3ea1] text-[12px]">{data}</span>
+                {selected.whyChoose.map((data, index) => (
+                  <li key={index} className="py-1 flex items-center gap-2">
+                    <i className="ri-check-line text-[#1bd07a] bg-[#1bd0791d] h-6 w-6 rounded-full flex items-center justify-center text-sm"></i>
+                    <span className="text-[#102b3ea1] text-sm">{data}</span>
                   </li>
                 ))}
               </ul>
               <Button btn="Start your Business" link="#" />
             </div>
 
+            {/* Image */}
             <div
-  className=" max-w-[339px] w-full bg-white rounded-[34px] overflow-hidden min-h-[354px]"
-  style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
->
-  <img
-    src={selected.image}
-    className="w-full h-full object-cover"
-    alt={selected.title}
-  />
-</div>
-
+              className="w-full sm:max-w-[339px] bg-white rounded-[34px] overflow-hidden min-h-[354px]"
+              style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
+            >
+              <img
+                src={selected.image}
+                className="w-full h-full object-cover"
+                alt={selected.title}
+              />
+            </div>
           </div>
         ) : (
           <div
-            key={loanProducts.title}
-            className="flex justify-around px-4 sm:px-6 py-14 animate-fade"
+            key={loanProducts[0].title}
+            className="flex flex-col-reverse sm:flex-row justify-around items-center gap-6 px-4 sm:px-6 py-14 animate-fade"
           >
+            {/* Left Default */}
             <div
-              className="max-w-[539px] bg-white rounded-[34px] py-6 px-[4vw] pb-11 min-h-[354px]"
+              className="w-full sm:max-w-[539px] bg-white rounded-[34px] py-6 px-[6vw] pb-11 min-h-[354px]"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
-              <h1 className="text-3xl font-bold">{loanProducts[0].tagline}</h1>
-              <p className="text-[12px] text-[#102b3e99] py-2">
+              <h1 className="text-2xl sm:text-3xl font-bold">
+                {loanProducts[0].tagline}
+              </h1>
+              <p className="text-sm text-[#102b3e99] py-2">
                 {loanProducts[0].description}
               </p>
               <ul className="pb-6">
-                {loanProducts[0].whyChoose.map((data) => (
-                  <li className="py-1 flex items-center justify-start gap-2">
-                    <i className="ri-check-line text-[#1bd07a] bg-[#1bd0791d] h-[24px] w-[24px] rounded-full p-0.5 flex items-center justify-center"></i>{" "}
-                    <span className="text-[#102b3ea1] text-[12px]">{data}</span>
+                {loanProducts[0].whyChoose.map((data, index) => (
+                  <li key={index} className="py-1 flex items-center gap-2">
+                    <i className="ri-check-line text-[#1bd07a] bg-[#1bd0791d] h-6 w-6 rounded-full flex items-center justify-center text-sm"></i>
+                    <span className="text-[#102b3ea1] text-sm">{data}</span>
                   </li>
                 ))}
               </ul>
               <Button btn="Start your Business" link="#" />
             </div>
+
+            {/* Right Default */}
             <div
-              className="max-w-[339px] bg-white rounded-[34px] min-h-[354px] overflow-hidden"
+              className="w-full sm:max-w-[339px] bg-white rounded-[34px] min-h-[354px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
