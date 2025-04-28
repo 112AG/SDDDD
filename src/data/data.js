@@ -348,6 +348,86 @@ export const awards = [
       company: "Follow Solutions",
       image: "https://randomuser.me/api/portraits/men/65.jpg",
     },
+    {
+      stars: 5,
+      text:
+        "Working with SD Finance was a game-changer for our business. Their expert guidance and flexible loan options helped us expand our operations and achieve our goals. Highly recommended!",
+      name: "Nitish Pathak",
+      company: "Realistic Engineering",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "SD Finance provided us with a tailored financial solution that met our unique needs. Their team is professional, responsive, and truly cares about their clients' success. We're grateful for their support!",
+      name: "Priya Jain",
+      company: "ABC Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Follow Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Working with SD Finance was a game-changer for our business. Their expert guidance and flexible loan options helped us expand our operations and achieve our goals. Highly recommended!",
+      name: "Nitish Pathak",
+      company: "Realistic Engineering",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "SD Finance provided us with a tailored financial solution that met our unique needs. Their team is professional, responsive, and truly cares about their clients' success. We're grateful for their support!",
+      name: "Priya Jain",
+      company: "ABC Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 5,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Bright Pvt Ltd",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
+    {
+      stars: 4,
+      text:
+        "Reliable and efficient services from SD Finance. Their consultation helped us take better financial decisions. Highly appreciate their support.",
+      name: "Ravi Mehta",
+      company: "Follow Solutions",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+    },
   ];
 
   // Blog Posts

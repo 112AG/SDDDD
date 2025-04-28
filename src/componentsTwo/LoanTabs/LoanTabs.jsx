@@ -47,23 +47,20 @@ function LoanTabs() {
     <div className="w-full h-full pt-4 sm:pt-6 lg:pt-8">
       <div className="animate-fade mx-auto max-w-6xl">
         {/* Tabs */}
-
-        <div className="flex items-center justify-center flex-wrap gap-4 max-w-6xl">
+        <div className="flex items-center justify-center sm:justify-between flex-wrap gap-4 max-w-6xl px-4 xl:px-0">
           {loanProducts.map((data, idx) => (
             <div
-              onClick={() => handleOption(data, idx)}
               key={idx}
-              className={`
-        ${
-          getOption.idx === ""
-            ? idx === 0
-              ? "tab-active"
-              : "tab-default"
-            : getOption.idx === idx
-            ? "tab-active"
-            : "tab-default"
-        } cursor-pointer font-semibold
-      `}
+              onClick={() => handleOption(data, idx)}
+              className={`cursor-pointer font-semibold ${
+                getOption.idx === ""
+                  ? idx === 0
+                    ? "tab-active"
+                    : "tab-default"
+                  : getOption.idx === idx
+                  ? "tab-active"
+                  : "tab-default"
+              }`}
             >
               {data.title}
             </div>
@@ -74,19 +71,15 @@ function LoanTabs() {
         {selected ? (
           <div
             key={selected.title}
-            className="max-w-6xl flex flex-col-reverse md:flex-row items-center justify-around px-4 sm:px-6 py-14 gap-6 animate-fade"
+            className="max-w-6xl flex flex-col-reverse md:flex-row items-center justify-between px-4 xl:px-0 py-14 gap-6 animate-fade"
           >
             {/* Left Content */}
             <div
-              className="sm:h-[454px] sm:w-[573px] h-[468px] w-[346px] rounded-[34px] bg-white flex items-start justify-center flex-col py-4 gap-3 px-4 sm:px-6"
+              className="sm:h-[454px] sm:w-[573px] h-[468px] w-full rounded-[34px] bg-white flex items-start justify-center flex-col py-4 gap-3 px-4 md:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
-              <h1 className="text-2xl sm:text-3xl font-bold">
-                {selected.tagline}
-              </h1>
-              <p className="text-sm text-[#102b3e99] py-2">
-                {selected.description}
-              </p>
+              <h1 className="text-2xl sm:text-3xl font-bold">{selected.tagline}</h1>
+              <p className="text-sm text-[#102b3e99] py-2">{selected.description}</p>
               <ul className="pb-6">
                 {selected.whyChoose.map((data, index) => (
                   <li key={index} className="py-1 flex items-center gap-2">
@@ -98,15 +91,15 @@ function LoanTabs() {
               <Button btn="Start your Business" link="#" />
             </div>
 
-            {/* Image */}
+            {/* Right Content (Image) */}
             <div
-              className="sm:h-[454px] sm:w-[573px] h-[408px] w-[346px] bg-white rounded-[34px] overflow-hidden"
+              className="sm:h-[454px] sm:w-[573px] h-[408px] w-full bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
                 src={selected.image}
-                className="w-full h-full object-cover"
                 alt={selected.title}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -120,12 +113,8 @@ function LoanTabs() {
               className="sm:h-[454px] sm:w-[573px] h-[438px] w-[346px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
-              <h1 className="text-2xl sm:text-3xl font-bold">
-                {loanProducts[0].tagline}
-              </h1>
-              <p className="text-sm text-[#102b3e99] py-2">
-                {loanProducts[0].description}
-              </p>
+              <h1 className="text-2xl sm:text-3xl font-bold">{loanProducts[0].tagline}</h1>
+              <p className="text-sm text-[#102b3e99] py-2">{loanProducts[0].description}</p>
               <ul className="pb-6">
                 {loanProducts[0].whyChoose.map((data, index) => (
                   <li key={index} className="py-1 flex items-center gap-2">
@@ -137,15 +126,15 @@ function LoanTabs() {
               <Button btn="Start your Business" link="#" />
             </div>
 
-            {/* Right Default */}
+            {/* Right Default (Image) */}
             <div
               className="sm:h-[454px] sm:w-[573px] h-[408px] w-[346px] bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
                 src={loanProducts[0].image}
-                className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden object-cover"
                 alt={loanProducts[0].title}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

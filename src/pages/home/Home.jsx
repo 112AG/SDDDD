@@ -31,7 +31,7 @@ function Home() {
     <div className="w-full bg-[#f6f8fb]">
       {/* Section 1: Hero ✅*/} 
       <div className="w-full bg-[#003274]">
-        <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 sm:px-6">
+        <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 md:px-6">
           {/* left */}
           <div className="relative flex items-center justify-center h-[532px]">
             <img
@@ -104,7 +104,7 @@ function Home() {
 
               <div className="flex flex-col text-white font-bold">
                 <span className="text-xl sm:text-2xl lg:text-3xl">50K+</span>
-                <span className="text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
+                <span className="md:text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
                   Happy Clients
                 </span>
               </div>
@@ -114,7 +114,7 @@ function Home() {
       </div>
 
       {/* Section 2: Loan Tabs ✅*/} 
-      <section className="w-full py-8 md:py-11">
+      <section className="w-full py-8 md:py-11 ">
         <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
       </section>
@@ -135,7 +135,8 @@ function Home() {
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 bg-[#003c71] w-full py-12">
+        <div className="h-full w-full bg-[#003274] py-12">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center sm:justify-between gap-16 sm:gap-16 xl:px-0 px-4">
           {awards.map((award, index) => (
             <div key={index} className="text-center text-white w-[140px]">
               <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
@@ -147,12 +148,13 @@ function Home() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* Section 5: How It Works */}
       <section className="w-full py-12">
         <TopHeader top="Process" subHead="How it works" />
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 mt-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">
           {/* Image */}
           <div className="w-full md:w-5/12">
             <img
@@ -195,14 +197,14 @@ function Home() {
       </section>
 
       {/* Section 6: EMI Calculator */}
-      <section className="w-full sm:py-12">
+      <section className="w-full sm:py-12 xl:px-0 px-4">
         <EMICalculator />
       </section>
 
       {/* Section 7: Partners */}
       <section className="w-full py-12">
         <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
-        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4 xl:px-0">
           {partners.map((partner, index) => (
             <div
               key={index}
@@ -219,7 +221,7 @@ function Home() {
       </section>
 
       {/* Section 8: Testimonials */}
-      <section className="w-full py-4 md:py-8 lg:py-12 px-2">
+      <section className="w-full py-4 md:py-8 lg:py-12 px-4 sm:px-0">
         <TopHeader
           top="Testimonials"
           subHead="Happy Clients with Appropriate Financing"
@@ -238,7 +240,7 @@ function Home() {
 
       {/* Section 10: CTA */}
       <section className="py-12 px-4">
-        <div className="bg-[#003366] text-white rounded-2xl p-10 text-center relative overflow-hidden max-w-4xl mx-auto">
+        <div className="bg-[#003366] text-white rounded-2xl py-18 text-center relative overflow-hidden max-w-6xl mx-auto">
           <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
             Register
           </p>

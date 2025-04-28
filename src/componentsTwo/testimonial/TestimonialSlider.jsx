@@ -10,7 +10,7 @@ export default function TestimonialSlider() {
     if (window.innerWidth < 768) {
       setCardsToShow(1); // Mobile: show 1 card
     } else {
-      setCardsToShow(2); // Desktop/tablet: show 2 cards
+      setCardsToShow(3); // Desktop/tablet: show 3 cards
     }
   };
 
@@ -34,7 +34,7 @@ export default function TestimonialSlider() {
   }, [cardsToShow]); // Add cardsToShow as a dependency
 
   return (
-    <div className="relative w-full md:max-w-4xl mx-auto py-4 md:py-6 lg:py-10 xl:py-12 flex items-center justify-around">
+    <div className="relative w-full md:max-w-6xl mx-auto py-4 md:py-6 lg:py-10 xl:py-12 flex items-center justify-around">
       <button
         onClick={prev}
         className="absolute left-0 z-10 p-2 rounded-full border border-gray-300 hover:bg-green-100"
@@ -42,7 +42,7 @@ export default function TestimonialSlider() {
         <FaChevronLeft />
       </button>
 
-      <div className="flex gap-4 md:gap-6 xl:gap-8">
+      <div className="flex gap-4 md:gap-6 xl:gap-8 w-full justify-center">
         {testimonials
           .slice(index, index + cardsToShow)
           .map((testimonial, i) => (
@@ -50,7 +50,7 @@ export default function TestimonialSlider() {
               key={i}
               className="bg-white p-6 rounded-xl shadow-lg w-80 transform transition-transform duration-300 hover:scale-105"
             >
-              <div className="flex text-green-500 ">
+              <div className="flex text-green-500 pb-1">
                 {[...Array(testimonial.stars)].map((_, i) => (
                   <FaStar key={i} />
                 ))}
