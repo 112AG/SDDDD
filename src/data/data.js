@@ -247,22 +247,22 @@ export const awards = [
     {
       id: 1,
       title: "Choose Your Loan Product",
-      description: "More information about our loan products and options.",
+      description: "Explore our range of loan products that suit your needs, from business to home loans and more.",
     },
     {
       id: 2,
       title: "Submit Your Application",
-      description: "Information about the application process and requirements.",
+      description: "Fill out a simple application form online.",
     },
     {
       id: 3,
       title: "Quick Processing & Approval",
-      description: "Details about our processing times and approval criteria.",
+      description: "Get quick approval with minimal documentation.",
     },
     {
       id: 4,
       title: "Funds Disbursed",
-      description: "Information about fund disbursement processes and timelines.",
+      description: "Receive your loan amount directly in your account.",
     },
   ];
 
