@@ -46,7 +46,7 @@ function Home() {
             <p className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium pb-2">
               Welcome to SD Financial Services
             </p>
-            <h1 className="text-white text-[32px] sm:text-[36px]  lg:text-[44px] font-bold sm:leading-[42px] md:leading-[52px]">
+            <h1 className="text-white text-[32px] sm:text-[36px]  lg:text-[44px] font-bold leading-tight sm:leading-[42px] md:leading-[52px]">
               Where <span className="text-[#F4C520]">Trust</span> Meets{" "}
               <span className="text-[#1AD079]">Financial</span> Excellence
             </h1>
@@ -61,7 +61,22 @@ function Home() {
 
             {/* Button and "Happy Clients" row */}
             <div className="flex items-center gap-5 pt-4">
-              <Button btn="Contact Us" link="#" />
+              <Link className="
+              relative
+              bg-[#F4C520]
+              text-black
+              font-semibold
+              px-5
+              py-2
+              rounded-md
+              shadow-[-3px_3px_0_#1AD079]
+              hover:shadow-[-2px_2px_0_#1AD079]
+              active:shadow-none
+              transition-all
+              lg:text-sm
+              text-[12px]
+              whitespace-nowrap
+            ">Contact Us</Link>
 
               <div className="flex items-center justify-start gap-[-20px]">
                 <div className="w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-10">
