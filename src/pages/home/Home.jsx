@@ -27,16 +27,6 @@ function Home() {
     setExpandedStep((prev) => (prev === id ? null : id));
   };
 
-  // Partners Section
-
-  const [showAll, setShowAll] = useState(false);
-
-  // Number of partners to show initially on mobile
-  const initialVisible = 6;
-
-  const visiblePartners = showAll ? partners : partners.slice(0, initialVisible);
-
-
   return (
     <div className="w-full bg-[#f6f8fb]">
       {/* Section 1: Hero ✅*/} 
@@ -196,47 +186,22 @@ function Home() {
 
       {/* Section 7: Partners */}
       <section className="w-full py-12">
-      <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
-      
-      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
-        {visiblePartners.map((partner, index) => (
-          <div
-            key={index}
-            className="bg-white py-3 px-2 md:p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
-          >
-            <img
-              src={partner.logo}
-              alt={partner.name}
-              className="h-10 object-contain"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* View More Button - show only if not showing all */}
-      {!showAll && partners.length > initialVisible && (
-        <div className="flex justify-center mt-6 sm:hidden">
-          <button
-            onClick={() => setShowAll(true)}
-            className="
-            relative
-            bg-[#F4C520]
-            text-black
-            font-semibold
-            px-6
-            py-2
-            rounded-md
-            shadow-[-1px_1px_0_#1AD079]
-            active:shadow-none
-            transition-all
-            text-sm
-            sm:text-base
-          "          >
-            View More
-          </button>
+        <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="bg-white py-3 px-0 md:p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-10 object-contain"
+              />
+            </div>
+          ))}
         </div>
-      )}
-    </section>
+      </section>
 
       {/* Section 8: Testimonials */}
       <section className="w-full py-4 md:py-8 lg:py-12 px-2">
