@@ -23,10 +23,10 @@ const EMICalculator = () => {
   }, [loanAmount, interestRate, loanTenure]);
 
   return (
-    <div className="flex max-w-5xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 p-4 sm:p-8 lg:p-12 bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]" style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}>
+    <div className="flex max-w-5xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 p-4 sm:p-8 lg:p-16 sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]" style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}>
       {/* Left Box */}
-      <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:max-w-[734px]">
-        <div className='p-4 sm:p-6'>
+      <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:min-w-[424px]">
+        <div className='p-8'>
           <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Calculate Your EMI</h2>
 
           {/* Loan Amount */}
@@ -70,7 +70,7 @@ const EMICalculator = () => {
           </div>
 
           {/* Loan Tenure */}
-          <div className="mb-4 sm:mb-6">
+          <div className="">
             <div className="flex justify-between mb-1">
               <span className="text-sm sm:text-base">Loan Tenure</span>
               <span className="text-sm sm:text-base">{loanTenure}Y</span>
@@ -91,17 +91,34 @@ const EMICalculator = () => {
         </div>
 
         {/* Results Box */}
-        <div className="bg-yellow-400 text-black p-3 sm:p-4 rounded-b-2xl lg:rounded-b-3xl grid grid-cols-3 text-center font-semibold">
+      
+        <div className="text-center 
+        relative
+        bg-[#F4C520]
+        text-black
+        font-semibold
+        px-6
+        py-4
+        rounded-2xl
+        shadow-[0px_2px_0_#1AD079]
+        active:shadow-none
+        transition-all
+        text-sm
+        sm:text-base
+        flex
+        items-center
+        justify-evenly
+      ">
           <div>
-            <p className="text-sm lg:text-lg">₹ {emi.toLocaleString()}</p>
+            <p className="text-sm lg:text-[16px]">₹ {emi.toLocaleString()}</p>
             <p className="text-xs text-gray-700">Loan EMI</p>
           </div>
-          <div className="border-x border-gray-300 px-1 sm:px-2">
-            <p className="text-sm lg:text-lg">₹ {interestAmount.toLocaleString()}</p>
+          <div className="border-x border-gray-300 px-2 sm:px-6">
+            <p className="text-sm lg:text-[16px]">₹ {interestAmount.toLocaleString()}</p>
             <p className="text-xs text-gray-700">Interest Amount</p>
           </div>
           <div>
-            <p className="text-sm lg:text-lg">₹ {totalPayable.toLocaleString()}</p>
+            <p className="text-sm lg:text-[16px]">₹ {totalPayable.toLocaleString()}</p>
             <p className="text-xs text-gray-700">Total Payable</p>
           </div>
         </div>

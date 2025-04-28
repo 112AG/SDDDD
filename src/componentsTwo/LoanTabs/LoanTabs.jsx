@@ -78,7 +78,7 @@ function LoanTabs() {
           >
             {/* Left Content */}
             <div
-              className="h-[454px] w-[573px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
+              className="sm:h-[454px] sm:w-[573px] h-[468px] w-[346px] rounded-[34px] bg-white flex items-start justify-center flex-col py-4 gap-3 px-4 sm:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <h1 className="text-2xl sm:text-3xl font-bold">
@@ -100,7 +100,7 @@ function LoanTabs() {
 
             {/* Image */}
             <div
-              className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden"
+              className="sm:h-[454px] sm:w-[573px] h-[408px] w-[346px] bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img
@@ -117,7 +117,7 @@ function LoanTabs() {
           >
             {/* Left Default */}
             <div
-              className="h-[454px] w-[573px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
+              className="sm:h-[454px] sm:w-[573px] h-[438px] w-[346px] rounded-[34px] bg-white flex items-start justify-center flex-col gap-3 px-4 sm:px-6"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <h1 className="text-2xl sm:text-3xl font-bold">
@@ -139,7 +139,7 @@ function LoanTabs() {
 
             {/* Right Default */}
             <div
-              className=" h-[454px] w-[573px] bg-white rounded-[34px] overflow-hidden"
+              className="sm:h-[454px] sm:w-[573px] h-[408px] w-[346px] bg-white rounded-[34px] overflow-hidden"
               style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
             >
               <img

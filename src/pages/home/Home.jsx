@@ -27,6 +27,16 @@ function Home() {
     setExpandedStep((prev) => (prev === id ? null : id));
   };
 
+  // Partners Section
+
+  const [showAll, setShowAll] = useState(false);
+
+  // Number of partners to show initially on mobile
+  const initialVisible = 6;
+
+  const visiblePartners = showAll ? partners : partners.slice(0, initialVisible);
+
+
   return (
     <div className="w-full bg-[#f6f8fb]">
       {/* Section 1: Hero ✅*/} 
@@ -105,7 +115,7 @@ function Home() {
       </section>
 
       {/* Section 3: Why Us */}
-      <section className="w-full ">
+      <section className="w-full">
         <TopHeader top="Why us" subHead="Why SD Financials?" />
         <WhyUs />
       </section>
@@ -116,11 +126,11 @@ function Home() {
           top="Achievements"
           subHead="Our Achievements & Certificates"
         />
-        <p className="text-center text-black text-lg mt-4 mb-10">
+        <p className="text-center text-black text-lg mt-4 mb-10 px-4">
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
-        <div className="flex flex-wrap justify-center gap-6 bg-[#003c71] w-full py-12">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 bg-[#003c71] w-full py-12">
           {awards.map((award, index) => (
             <div key={index} className="text-center text-white w-[140px]">
               <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
@@ -158,11 +168,13 @@ function Home() {
                   <h3 className="font-semibold text-lg">
                     {step.id}. {step.title}
                   </h3>
+                  <div className={`flex items-center justify-center h-[20px] w-[20px] border border-[#1AD079] rounded-full ${expandedStep === step.id ? 'bg-[#1AD079] text-white': 'text-[#1AD079] bg-white'}`}>
                   <i
                     className={`ri-arrow-${
                       expandedStep === step.id ? "down" : "left"
-                    }-s-line text-[#1AD079] text-2xl`}
+                    }-s-line text-xl`}
                   />
+                  </div>
                 </div>
                 <div
                   className={`transition-all overflow-hidden ${
@@ -178,36 +190,61 @@ function Home() {
       </section>
 
       {/* Section 6: EMI Calculator */}
-      <section className="w-full py-12">
+      <section className="w-full sm:py-12">
         <EMICalculator />
       </section>
 
       {/* Section 7: Partners */}
       <section className="w-full py-12">
-        <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
-        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-white p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="h-10 object-contain"
-              />
-            </div>
-          ))}
+      <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
+      
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4">
+        {visiblePartners.map((partner, index) => (
+          <div
+            key={index}
+            className="bg-white py-3 px-2 md:p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
+          >
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              className="h-10 object-contain"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* View More Button - show only if not showing all */}
+      {!showAll && partners.length > initialVisible && (
+        <div className="flex justify-center mt-6 sm:hidden">
+          <button
+            onClick={() => setShowAll(true)}
+            className="
+            relative
+            bg-[#F4C520]
+            text-black
+            font-semibold
+            px-6
+            py-2
+            rounded-md
+            shadow-[-1px_1px_0_#1AD079]
+            active:shadow-none
+            transition-all
+            text-sm
+            sm:text-base
+          "          >
+            View More
+          </button>
         </div>
-      </section>
+      )}
+    </section>
 
       {/* Section 8: Testimonials */}
-      <section className="w-full py-12">
+      <section className="w-full py-4 md:py-8 lg:py-12 px-2">
         <TopHeader
           top="Testimonials"
           subHead="Happy Clients with Appropriate Financing"
         />
-        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-10">
+        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 ">
           Experience and quality guaranteed through modern production
           facilities.
         </p>
@@ -215,7 +252,7 @@ function Home() {
       </section>
 
       {/* Section 9: Blog */}
-      <section className="w-full py-12">
+      <section className="w-full md:py-12">
         <BlogPosts />
       </section>
 
