@@ -9,6 +9,8 @@ export default function TestimonialSlider() {
   const updateCardsToShow = () => {
     if (window.innerWidth < 768) {
       setCardsToShow(1); // Mobile: show 1 card
+    } else if(window.innerWidth < 1224) {
+      setCardsToShow(2); // Tablet: show 2 cards  
     } else {
       setCardsToShow(3); // Desktop/tablet: show 3 cards
     }
@@ -34,10 +36,10 @@ export default function TestimonialSlider() {
   }, [cardsToShow]); // Add cardsToShow as a dependency
 
   return (
-    <div className="relative w-full md:max-w-6xl mx-auto py-4 md:py-6 lg:py-10 xl:py-12 flex items-center justify-around">
+    <div className="relative w-full md:max-w-6xl mx-auto pt-4 md:pt-6 lg:pt-10 xl:pt-12 flex items-center justify-around">
       <button
         onClick={prev}
-        className="absolute left-0 z-10 p-2 rounded-full border border-gray-300 hover:bg-green-100"
+        className="absolute left-0 z-10 p-2 rounded-full border border-gray-300 hover:bg-green-100 ml-4"
       >
         <FaChevronLeft />
       </button>
@@ -73,7 +75,7 @@ export default function TestimonialSlider() {
 
       <button
         onClick={next}
-        className="absolute right-0 z-10 p-2 rounded-full border border-gray-300 hover:bg-green-100"
+        className="absolute right-0 z-10 p-2 rounded-full border border-gray-300 hover:bg-green-100  mr-4"
       >
         <FaChevronRight />
       </button>

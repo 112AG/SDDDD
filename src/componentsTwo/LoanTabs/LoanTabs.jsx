@@ -47,7 +47,7 @@ function LoanTabs() {
     <div className="w-full h-full pt-4 sm:pt-6 lg:pt-8">
       <div className="animate-fade mx-auto max-w-6xl">
         {/* Tabs */}
-        <div className="flex items-center justify-center sm:justify-between flex-wrap gap-4 max-w-6xl px-4 xl:px-0">
+        <div className="flex items-center justify-center md:justify-between flex-wrap gap-4 max-w-6xl px-4 xl:px-0">
           {loanProducts.map((data, idx) => (
             <div
               key={idx}

@@ -25,7 +25,7 @@ const EMICalculator = () => {
   return (
     <div className="flex max-w-6xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 p-4 sm:p-8 lg:p-16 sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]" style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}>
       {/* Left Box */}
-      <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:min-w-[424px]">
+      <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:min-w-[424px] md:max-w-[386px]">
         <div className='p-8'>
           <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Calculate Your EMI</h2>
 

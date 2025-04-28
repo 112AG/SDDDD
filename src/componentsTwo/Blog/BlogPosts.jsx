@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function BlogPosts() {
   return (
-    <section className="py-12 px-4 sm:px-0 max-w-6xl mx-auto">
+    <section className="py-12 px-4 xl:px-0 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold">Our Blog</h2>
         <button className="border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-50 transition">
@@ -13,7 +13,7 @@ export default function BlogPosts() {
         </button>
       </div>
 
-      <div className="flex flex-wrap md:gap-6 gap-4 gap-y-3.5 justify-between">
+      <div className="flex flex-wrap md:gap-6 gap-4 gap-y-3.5 justify-evenly md:justify-between">
         {blogs.map((blog) => (
           <div key={blog.id} className="max-w-[190px] md:max-w-[318px] rounded-lg overflow-hidden shadow-md sm:shadow-none">
             <img src={blog.image} alt={blog.title} className="w-full h-[202px] md:h-[292px] object-cover" />

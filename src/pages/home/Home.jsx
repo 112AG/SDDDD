@@ -156,11 +156,11 @@ function Home() {
         <TopHeader top="Process" subHead="How it works" />
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">
           {/* Image */}
-          <div className="w-full md:w-5/12">
+          <div className="md:w-5/12">
             <img
+            className="h-full w-full object-cover rounded-3xl"
               src={HowItWorks}
               alt="How It Works"
-              className="rounded-3xl object-cover"
             />
           </div>
           {/* Steps */}
