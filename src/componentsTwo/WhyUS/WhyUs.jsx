@@ -53,6 +53,11 @@ function WhyUs() {
               <div
                 key={index}
                 className="
+                opacity-90
+                hover:opacity-100
+                hover:scale-105
+                transition-all
+                duration-300
         relative
         bg-[#F4C520]
         text-black
@@ -60,10 +65,9 @@ function WhyUs() {
         px-6
         py-2
         rounded-md
-        shadow-[3px_3px_0_#1AD079]
-        hover:shadow-[2px_2px_0_#1AD079]
+        
+        shadow-[2px_2px_0_#1AD079]
         active:shadow-none
-        transition-all
         text-sm
         sm:text-base
         w-[256.7px]

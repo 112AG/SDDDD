@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#f6f8fb] text-gray-800 px-6 py-12 text-sm border-t border-gray-300">
-      <div className="flex flex-wrap items-center justify-between mx-auto gap-8">
+      <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between mx-auto gap-8">
         
         {/* Menu */}
         <div>
@@ -68,7 +68,7 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg mb-3">SD Financial Services</h3>
           <p className="text-xs mb-4 leading-relaxed text-gray-600">
-            With SD Finance, managing your money has never been more convenient.
+            With SD Finance, managing your money has<br />never been more convenient.
           </p>
           <div className="flex gap-4 text-xl text-gray-600 transition-colors duration-200">
             <a href="#" className="hover:text-[#109E73]"><FaInstagram /></a>

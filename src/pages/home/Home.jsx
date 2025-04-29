@@ -37,6 +37,7 @@ function Home() {
   const numberRef = useRef(null);
 
   useGSAP(() => {
+    // Hero Section Animation Left and right------------------------
     gsap.fromTo(
       [leftSectionRef.current, rightSectionRef.current],
       { opacity: 0, y: 50 },
@@ -54,8 +55,8 @@ function Home() {
       }
     );
 
+    // Text Animation
     const text = "Welcome to SD Financial Services";
-
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5, yoyo: true });
     tl.to(textRef.current, {
       duration: 3,
@@ -64,6 +65,7 @@ function Home() {
       ease: "none",
     });
 
+    // Avatar Animation
     gsap.set(avatarsRef.current, { scale: 0, opacity: 0 }); // initial state
     gsap.to(avatarsRef.current, {
       scale: 1,
@@ -71,20 +73,21 @@ function Home() {
       duration: 1.6,
       delay: 2,
       stagger: 1,
-      ease: "back.out(1.7)",
+
     });
 
+    // Number Animation
     const obj = { val: 0 };
-
     gsap.to(obj, {
       val: 50,
-      duration: 3,
-      delay: 2,
-      ease: "power1.out",
+      duration: 5,
+      delay: 5,
       onUpdate: () => {
         numberRef.current.innerText = `${Math.floor(obj.val)}K+`;
       },
     });
+
+    // 
   }, []);
 
   const [expandedStep, setExpandedStep] = useState(1);
@@ -96,7 +99,7 @@ function Home() {
   return (
     <div className="w-full bg-[#f6f8fb]">
       {/* Section 1: Hero ✅*/}
-      <div className="w-full bg-[#003274]">
+      <div className="w-full bg-[#003274] overflow-hidden">
         <div
           ref={container}
           className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 md:px-6"
@@ -120,7 +123,7 @@ function Home() {
           >
             <p
               ref={textRef}
-              className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium  min-h-[1.5em]"
+              className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium  h-[28px]"
             ></p>
             <h1 className="text-white text-[32px] sm:text-[36px]  lg:text-[44px] font-bold leading-tight sm:leading-[42px] md:leading-[52px]">
               Where <span className="text-[#F4C520]">Trust</span> Meets{" "}
@@ -143,8 +146,8 @@ function Home() {
               bg-[#F4C520]
               text-black
               font-semibold
-              px-5
-              py-2
+              px-6
+              py-2.5
               rounded-md
               shadow-[-3px_3px_0_#1AD079]
               hover:shadow-[-2px_2px_0_#1AD079]
