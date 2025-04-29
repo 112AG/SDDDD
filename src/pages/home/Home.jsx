@@ -17,10 +17,76 @@ import WhyUs from "../../componentsTwo/WhyUS/WhyUs";
 import EMICalculator from "../../componentsTwo/EMI/EMICalculator";
 import TestimonialSlider from "../../componentsTwo/testimonial/TestimonialSlider";
 import BlogPosts from "../../componentsTwo/Blog/BlogPosts";
-
 import { awards, steps, partners } from "../../data/data";
 
+// GSAP
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import TextPlugin from "gsap/TextPlugin";
+
 function Home() {
+  gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP); // register any plugins, including the useGSAP hook
+
+  const container = useRef();
+  const leftSectionRef = useRef();
+  const rightSectionRef = useRef();
+  const textRef = useRef();
+  const avatarsRef = useRef([]);
+  const numberRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      [leftSectionRef.current, rightSectionRef.current],
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 1,
+        ease: "power2.out",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 80%",
+        },
+      }
+    );
+
+    const text = "Welcome to SD Financial Services";
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5, yoyo: true });
+    tl.to(textRef.current, {
+      duration: 3,
+      delay: 2,
+      text: text,
+      ease: "none",
+    });
+
+    gsap.set(avatarsRef.current, { scale: 0, opacity: 0 }); // initial state
+    gsap.to(avatarsRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 1.6,
+      delay: 2,
+      stagger: 1,
+      ease: "back.out(1.7)",
+    });
+
+    const obj = { val: 0 };
+
+    gsap.to(obj, {
+      val: 50,
+      duration: 3,
+      delay: 2,
+      ease: "power1.out",
+      onUpdate: () => {
+        numberRef.current.innerText = `${Math.floor(obj.val)}K+`;
+      },
+    });
+  }, []);
+
   const [expandedStep, setExpandedStep] = useState(1);
 
   const toggleStep = (id) => {
@@ -29,11 +95,17 @@ function Home() {
 
   return (
     <div className="w-full bg-[#f6f8fb]">
-      {/* Section 1: Hero ✅*/} 
+      {/* Section 1: Hero ✅*/}
       <div className="w-full bg-[#003274]">
-        <div className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 md:px-6">
+        <div
+          ref={container}
+          className="pt-24 w-full flex items-center sm:flex-row flex-col-reverse gap-4 mx-auto justify-around max-w-6xl xl:max-w-[84vw] 2xl:max-w-[1460px] px-4 md:px-6"
+        >
           {/* left */}
-          <div className="relative flex items-center justify-center h-[532px]">
+          <div
+            ref={leftSectionRef}
+            className="relative flex items-center justify-center h-[532px]"
+          >
             <img
               src={SDMan}
               alt="EMP"
@@ -42,10 +114,14 @@ function Home() {
             <img src={Decoration} alt="BG" className="h-[368px] w-[364px]" />
           </div>
           {/* RIght */}
-          <div className="w-[100%] sm:w-[50%] md:w-[40%] sm:h-full flex flex-col items-start justify-center pt-4 sm:pt-0">
-            <p className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium pb-2">
-              Welcome to SD Financial Services
-            </p>
+          <div
+            ref={rightSectionRef}
+            className="w-[100%] sm:w-[50%] md:w-[40%] sm:h-full flex flex-col items-start justify-center pt-4 sm:pt-0"
+          >
+            <p
+              ref={textRef}
+              className="text-[#1AD079] text-sm sm:text-base md:text-lg font-medium  min-h-[1.5em]"
+            ></p>
             <h1 className="text-white text-[32px] sm:text-[36px]  lg:text-[44px] font-bold leading-tight sm:leading-[42px] md:leading-[52px]">
               Where <span className="text-[#F4C520]">Trust</span> Meets{" "}
               <span className="text-[#1AD079]">Financial</span> Excellence
@@ -61,7 +137,8 @@ function Home() {
 
             {/* Button and "Happy Clients" row */}
             <div className="flex items-center gap-5 pt-4">
-              <Link className="
+              <Link
+                className="
               relative
               bg-[#F4C520]
               text-black
@@ -76,35 +153,31 @@ function Home() {
               lg:text-sm
               text-[12px]
               whitespace-nowrap
-            ">Contact Us</Link>
+            "
+              >
+                Contact Us
+              </Link>
 
-              <div className="flex items-center justify-start gap-[-20px]">
-                <div className="w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-10">
-                  <img
-                    src={clientOne}
-                    alt="Client 1"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-20 -ml-4">
-                  <img
-                    src={clientTwo}
-                    alt="Client 2"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-30 -ml-4">
-                  <img
-                    src={clientThree}
-                    alt="Client 3"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="flex items-center justify-start">
+                {[clientOne, clientTwo, clientThree].map((img, i) => (
+                  <div
+                    key={i}
+                    ref={(el) => (avatarsRef.current[i] = el)}
+                    className={`w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-${
+                      10 + i * 10
+                    } ${i > 0 ? "-ml-4" : ""}`}
+                  >
+                    <img
+                      src={img}
+                      alt={`Client ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col text-white font-bold">
-                <span className="text-xl sm:text-2xl lg:text-3xl">50K+</span>
-                <span className="md:text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
+              <span ref={numberRef} className="text-xl sm:text-2xl lg:text-3xl">0</span>                <span className="md:text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
                   Happy Clients
                 </span>
               </div>
@@ -113,7 +186,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Section 2: Loan Tabs ✅*/} 
+      {/* Section 2: Loan Tabs ✅*/}
       <section className="w-full py-8 md:py-11 ">
         <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
@@ -136,18 +209,18 @@ function Home() {
           solutions.
         </p>
         <div className="h-full w-full bg-[#003274] py-12">
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center sm:justify-between gap-16 sm:gap-16 xl:px-0 px-4">
-          {awards.map((award, index) => (
-            <div key={index} className="text-center text-white w-[140px]">
-              <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
-              <h4 className="font-semibold leading-tight">
-                {award.title}
-                <br />
-                {award.subtitle}
-              </h4>
-            </div>
-          ))}
-        </div>
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center sm:justify-between gap-16 sm:gap-16 xl:px-0 px-4">
+            {awards.map((award, index) => (
+              <div key={index} className="text-center text-white w-[140px]">
+                <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
+                <h4 className="font-semibold leading-tight">
+                  {award.title}
+                  <br />
+                  {award.subtitle}
+                </h4>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -158,7 +231,7 @@ function Home() {
           {/* Image */}
           <div className="md:w-5/12">
             <img
-            className="h-full w-full object-cover rounded-3xl"
+              className="h-full w-full object-cover rounded-3xl"
               src={HowItWorks}
               alt="How It Works"
             />
@@ -175,12 +248,18 @@ function Home() {
                   <h3 className="font-semibold text-lg">
                     {step.id}. {step.title}
                   </h3>
-                  <div className={`flex items-center justify-center h-[20px] w-[20px] border border-[#1AD079] rounded-full ${expandedStep === step.id ? 'bg-[#1AD079] text-white': 'text-[#1AD079] bg-white'}`}>
-                  <i
-                    className={`ri-arrow-${
-                      expandedStep === step.id ? "down" : "left"
-                    }-s-line text-xl`}
-                  />
+                  <div
+                    className={`flex items-center justify-center h-[20px] w-[20px] border border-[#1AD079] rounded-full ${
+                      expandedStep === step.id
+                        ? "bg-[#1AD079] text-white"
+                        : "text-[#1AD079] bg-white"
+                    }`}
+                  >
+                    <i
+                      className={`ri-arrow-${
+                        expandedStep === step.id ? "down" : "left"
+                      }-s-line text-xl`}
+                    />
                   </div>
                 </div>
                 <div
