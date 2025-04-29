@@ -62,7 +62,7 @@ function Home() {
       duration: 3,
       delay: 2,
       text: text,
-      ease: "none",
+      ease: "power2.inOut",
     });
 
     // Avatar Animation
