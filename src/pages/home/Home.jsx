@@ -73,7 +73,6 @@ function Home() {
       duration: 1.6,
       delay: 2,
       stagger: 1,
-
     });
 
     // Number Animation
@@ -87,7 +86,7 @@ function Home() {
       },
     });
 
-    // 
+    //
   }, []);
 
   const [expandedStep, setExpandedStep] = useState(1);
@@ -166,9 +165,9 @@ function Home() {
                   <div
                     key={i}
                     ref={(el) => (avatarsRef.current[i] = el)}
-                    className={`w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-${
-                      10 + i * 10
-                    } ${i > 0 ? "-ml-4" : ""}`}
+                    className={`w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] rounded-full border-[2px] border-[#001f3f] overflow-hidden z-[${
+                      30 - i * 10
+                    }] ${i > 0 ? "-ml-4" : ""}`}
                   >
                     <img
                       src={img}
@@ -180,7 +179,13 @@ function Home() {
               </div>
 
               <div className="flex flex-col text-white font-bold">
-              <span ref={numberRef} className="text-xl sm:text-2xl lg:text-3xl">0</span>                <span className="md:text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
+                <span
+                  ref={numberRef}
+                  className="text-xl sm:text-2xl lg:text-3xl"
+                >
+                  0
+                </span>{" "}
+                <span className="md:text-[12px] text-gray-300 sm:text-base lg:text-lg font-normal">
                   Happy Clients
                 </span>
               </div>
