@@ -314,8 +314,7 @@ function Home() {
           subHead="Happy Clients with Appropriate Financing"
         />
         <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 pt-4 sm:pt-0 ">
-          Experience and quality guaranteed through modern production
-          facilities.
+        Hear how we’ve helped clients achieve their dreams with the right financial solutions.
         </p>
         <TestimonialSlider />
       </section>

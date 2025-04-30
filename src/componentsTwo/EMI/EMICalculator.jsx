@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Button from '../../components/Button';
+import React, { useState, useEffect } from "react";
+import Button from "../../components/Button";
 
 const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(2470000);
@@ -13,7 +13,8 @@ const EMICalculator = () => {
   useEffect(() => {
     const r = interestRate / 12 / 100;
     const n = loanTenure * 12;
-    const emiCalc = loanAmount * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    const emiCalc =
+      (loanAmount * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     const total = emiCalc * n;
     const interest = total - loanAmount;
 
@@ -23,17 +24,24 @@ const EMICalculator = () => {
   }, [loanAmount, interestRate, loanTenure]);
 
   return (
-    <div className="flex max-w-6xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 p-4 sm:p-8 lg:p-16 sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]" style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}>
+    <div
+      className="flex max-w-6xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 p-4 sm:p-8 lg:p-16 sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]"
+      style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
+    >
       {/* Left Box */}
       <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:min-w-[424px] md:max-w-[386px]">
-        <div className='p-8'>
-          <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Calculate Your EMI</h2>
+        <div className="p-8">
+          <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">
+            Calculate Your EMI
+          </h2>
 
           {/* Loan Amount */}
           <div className="mb-4 sm:mb-6">
             <div className="flex justify-between mb-1">
               <span className="text-sm sm:text-base">Loan Amount</span>
-              <span className="text-sm sm:text-base">₹ {loanAmount.toLocaleString()}</span>
+              <span className="text-sm sm:text-base">
+                ₹ {loanAmount.toLocaleString()}
+              </span>
             </div>
             <input
               type="range"
@@ -45,7 +53,11 @@ const EMICalculator = () => {
               className="w-full accent-green-500"
             />
             <div className="flex justify-between text-xs mt-1 opacity-80">
-              <span>1L</span><span>25L</span><span>50L</span><span>75L</span><span>1CR</span>
+              <span>1L</span>
+              <span>25L</span>
+              <span>50L</span>
+              <span>75L</span>
+              <span>1CR</span>
             </div>
           </div>
 
@@ -65,7 +77,12 @@ const EMICalculator = () => {
               className="w-full accent-green-500"
             />
             <div className="flex justify-between text-xs mt-1 opacity-80">
-              <span>4%</span><span>8%</span><span>12%</span><span>16%</span><span>20%</span><span>24%</span>
+              <span>4%</span>
+              <span>8%</span>
+              <span>12%</span>
+              <span>16%</span>
+              <span>20%</span>
+              <span>24%</span>
             </div>
           </div>
 
@@ -85,14 +102,20 @@ const EMICalculator = () => {
               className="w-full accent-green-500"
             />
             <div className="flex justify-between text-xs mt-1 opacity-80">
-              <span>5Y</span><span>10Y</span><span>15Y</span><span>20Y</span><span>25Y</span><span>30Y</span>
+              <span>5Y</span>
+              <span>10Y</span>
+              <span>15Y</span>
+              <span>20Y</span>
+              <span>25Y</span>
+              <span>30Y</span>
             </div>
           </div>
         </div>
 
         {/* Results Box */}
-      
-        <div className="text-center 
+
+        <div
+          className="text-center 
         relative
         bg-[#F4C520]
         text-black
@@ -108,17 +131,22 @@ const EMICalculator = () => {
         flex
         items-center
         justify-evenly
-      ">
+      "
+        >
           <div>
             <p className="text-sm lg:text-[16px]">₹ {emi.toLocaleString()}</p>
             <p className="text-xs text-gray-700">Loan EMI</p>
           </div>
           <div className="border-x border-gray-300 px-2 sm:px-6">
-            <p className="text-sm lg:text-[16px]">₹ {interestAmount.toLocaleString()}</p>
+            <p className="text-sm lg:text-[16px]">
+              ₹ {interestAmount.toLocaleString()}
+            </p>
             <p className="text-xs text-gray-700">Interest Amount</p>
           </div>
           <div>
-            <p className="text-sm lg:text-[16px]">₹ {totalPayable.toLocaleString()}</p>
+            <p className="text-sm lg:text-[16px]">
+              ₹ {totalPayable.toLocaleString()}
+            </p>
             <p className="text-xs text-gray-700">Total Payable</p>
           </div>
         </div>
@@ -126,18 +154,30 @@ const EMICalculator = () => {
 
       {/* Right Info */}
       <div className="w-full lg:max-w-lg">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#032d60] mb-3 sm:mb-4">More accurate estimates for your loan</h2>
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#032d60] mb-3 sm:mb-4">
+          More accurate estimates for your loan
+        </h2>
         <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis scelerisque at quam congue posuere libero in sit quam.
+          Our EMI calculator gives you a general idea of your loan payments. For
+          the most accurate and personalized details, please connect with our
+          finance experts.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
           <div>
-            <h4 className="font-semibold text-sm sm:text-base">Calculate the interest rate</h4>
-            <p className="text-xs sm:text-sm text-gray-500">We always think of even the smallest</p>
+            <h4 className="font-semibold text-sm sm:text-base">
+              Calculate the interest rate
+            </h4>
+            <p className="text-xs sm:text-sm text-gray-500">
+              Estimate based on average market values.
+            </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm sm:text-base">Calculate your monthly fee</h4>
-            <p className="text-xs sm:text-sm text-gray-500">We always think of even the smallest</p>
+            <h4 className="font-semibold text-sm sm:text-base">
+              Calculate your monthly fee
+            </h4>
+            <p className="text-xs sm:text-sm text-gray-500">
+              Know your tentative EMI in seconds.
+            </p>
           </div>
         </div>
         <Button btn="Calculate Now" link="#" />

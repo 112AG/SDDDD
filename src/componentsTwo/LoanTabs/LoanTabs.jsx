@@ -35,7 +35,7 @@ function LoanTabs() {
 
   function resetAutoSlide() {
     clearInterval(intervalRef.current);
-    // startAutoSlide(); // Uncomment this line if you want to restart the auto slide after manual selection
+    // startAutoSlide(); 
   }
 
   useEffect(() => {
@@ -88,7 +88,7 @@ function LoanTabs() {
                   </li>
                 ))}
               </ul>
-              <Button btn="Start your Business" link="#" />
+              <Button btn={selected.buttonLabel} link="#" />
             </div>
 
             {/* Right Content (Image) */}
@@ -123,7 +123,7 @@ function LoanTabs() {
                   </li>
                 ))}
               </ul>
-              <Button btn="Start your Business" link="#" />
+              <Button btn={loanProducts[0].buttonLabel} link="#" />
             </div>
 
             {/* Right Default (Image) */}

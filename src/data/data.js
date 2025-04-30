@@ -161,7 +161,6 @@ export const partners = [
   }
 ]
 
-
 export const data = [
   {
     title: "Business Loans",
@@ -179,7 +178,8 @@ export const data = [
       "Business Expansion Loans",
       "Equipment Financing"
     ],
-    image: One
+    image: One,
+    buttonLabel: "Boost Your Business"
   },
   {
     title: "Home Loans",
@@ -192,7 +192,8 @@ export const data = [
       "Quick Disbursement",
       "Expert Guidance"
     ],
-    image: Two
+    image: Two,
+    buttonLabel: "Own Your Dream Home"
   },
   {
     title: "Personal Loans",
@@ -204,7 +205,8 @@ export const data = [
       "Flexible Repayment Terms",
       "Competitive Rates"
     ],
-    image: Three
+    image: Three,
+    buttonLabel: "Get Instant Funds"
   },
   {
     title: "Property Loan",
@@ -216,7 +218,8 @@ export const data = [
       "Flexible Repayment Plans",
       "Competitive Rates"
     ],
-    image: Five
+    image: Five,
+    buttonLabel: "Invest in Property"
   },
   {
     title: "Auto Loans",
@@ -228,9 +231,11 @@ export const data = [
       "Competitive Interest Rates",
       "Flexible Terms"
     ],
-    image: Four
-  },
+    image: Four,
+    buttonLabel: "Drive Your Dream Car"
+  }
 ];
+
 
 
 // Awards
