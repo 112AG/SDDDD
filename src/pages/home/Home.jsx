@@ -146,7 +146,7 @@ function Home() {
               text-black
               font-semibold
               px-6
-              py-2.5
+              py-3
               rounded-md
               shadow-[-3px_3px_0_#1AD079]
               hover:shadow-[-2px_2px_0_#1AD079]
@@ -338,7 +338,22 @@ function Home() {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-[#F4C520] text-black font-semibold px-6 py-3 rounded-md shadow-md hover:shadow-lg transition"
+            className="
+              relative
+              bg-[#F4C520]
+              text-black
+              font-semibold
+              px-6
+              py-3
+              rounded-md
+              shadow-[-3px_3px_0_#1AD079]
+              hover:shadow-[-2px_2px_0_#1AD079]
+              active:shadow-none
+              transition-all
+              lg:text-sm
+              text-[12px]
+              whitespace-nowrap
+            "
           >
             Contact Us
           </Link>
