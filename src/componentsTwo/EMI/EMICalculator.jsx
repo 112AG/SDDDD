@@ -180,7 +180,7 @@ const EMICalculator = () => {
             </p>
           </div>
         </div>
-        <Button btn="Calculate Now" link="#" />
+        <Button btn="Get an Estimate" link="#" />
       </div>
     </div>
   );
