@@ -328,9 +328,9 @@ function Home() {
       {/* Section 10: CTA */}
       <section className="py-12 px-4">
         <div className="bg-[#003366] text-white rounded-2xl py-18 text-center relative overflow-hidden max-w-6xl mx-auto px-4">
-          <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
+          {/* <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
             Register
-          </p>
+          </p> */}
           <h2 className="text-3xl font-bold mb-4">Get In Touch With Us</h2>
           <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
             Ready to apply or have questions? Our team is here to help. Reach
