@@ -313,7 +313,7 @@ function Home() {
           top="Testimonials"
           subHead="Happy Clients with Appropriate Financing"
         />
-        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 ">
+        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 pt-4 sm:pt-0 ">
           Experience and quality guaranteed through modern production
           facilities.
         </p>
