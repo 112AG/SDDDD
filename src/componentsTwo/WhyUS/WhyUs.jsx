@@ -42,13 +42,13 @@ function WhyUs() {
   ];
 
   return (
-    <div className="h-full w-full pt-10 pl-4 pr-4">
+    <div className="h-full w-full pt-10">
       <div className="max-w-6xl mx-auto flex items-center justify-center">
         <div
-          className=" rounded-[34px] md:w-[77.03vw] w-full bg-white py-12 px-4 xl:px-0 sm:py-10 lg:py-14 "
+          className=" rounded-[34px]  w-full bg-white py-12 xl:px-0 sm:py-10 lg:py-14 "
           style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
         >
-          <div className="flex flex-wrap justify-center xl:gap-16 gap-y-10 gap-4">
+          <div className="flex flex-wrap justify-evenly sm:justify-center xl:gap-16 gap-y-10 gap-4">
             {loanFeatures.map((feature, index) => (
               <div
                 key={index}
