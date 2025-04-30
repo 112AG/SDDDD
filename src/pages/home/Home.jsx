@@ -212,7 +212,7 @@ function Home() {
           top="Achievements"
           subHead="Our Achievements & Certificates"
         />
-        <p className="text-center text-black text-lg mt-4 mb-10 px-4">
+        <p className="text-center text-black text-lg mt-4 mb-10 px-4 pt-4 sm:pt-0">
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
@@ -327,7 +327,7 @@ function Home() {
 
       {/* Section 10: CTA */}
       <section className="py-12 px-4">
-        <div className="bg-[#003366] text-white rounded-2xl py-18 text-center relative overflow-hidden max-w-6xl mx-auto">
+        <div className="bg-[#003366] text-white rounded-2xl py-18 text-center relative overflow-hidden max-w-6xl mx-auto px-4">
           <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
             Register
           </p>

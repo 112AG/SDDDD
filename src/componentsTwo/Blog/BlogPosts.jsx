@@ -15,7 +15,7 @@ export default function BlogPosts() {
 
       <div className="flex flex-wrap md:gap-6 gap-4 gap-y-3.5 justify-evenly md:justify-between">
         {blogs.map((blog) => (
-          <div key={blog.id} className="max-w-[190px] md:max-w-[318px] rounded-lg overflow-hidden shadow-md sm:shadow-none">
+          <div key={blog.id} className="max-w-[160px] sm:max-w-[210px] md:max-w-[318px] rounded-lg overflow-hidden shadow-md sm:shadow-none">
             <img src={blog.image} alt={blog.title} className="w-full h-[202px] md:h-[292px] object-cover" />
             <div className="md:p-4 p-2">
               <p className="text-[12px] md:text-sm text-gray-500 mb-1">{blog.date}</p>
