@@ -27,7 +27,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
 
 function Home() {
-  gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP); // register any plugins, including the useGSAP hook
+  gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
 
   const container = useRef();
   const leftSectionRef = useRef();
@@ -70,9 +70,9 @@ function Home() {
     gsap.to(avatarsRef.current, {
       scale: 1,
       opacity: 1,
-      duration: 1.6,
+      duration: 1,
       delay: 2,
-      stagger: 1,
+      stagger: 0.8,
     });
 
     // Number Animation
@@ -80,7 +80,7 @@ function Home() {
     gsap.to(obj, {
       val: 50,
       duration: 5,
-      delay: 5,
+      delay: 2,
       onUpdate: () => {
         numberRef.current.innerText = `${Math.floor(obj.val)}K+`;
       },

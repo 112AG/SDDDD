@@ -30,12 +30,12 @@ function LoanTabs() {
           idx: nextIdx,
         };
       });
-    }, 7000);
+    }, 4000);
   }
 
   function resetAutoSlide() {
     clearInterval(intervalRef.current);
-    startAutoSlide();
+    // startAutoSlide(); // Uncomment this line if you want to restart the auto slide after manual selection
   }
 
   useEffect(() => {

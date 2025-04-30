@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#f6f8fb] text-gray-800 px-6 py-12 text-sm border-t border-gray-300">
-      <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between mx-auto gap-8">
+      <div className="max-w-6xl flex flex-wrap items-start justify-between mx-auto gap-8">
         
         {/* Menu */}
         <div>

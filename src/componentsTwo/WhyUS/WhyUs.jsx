@@ -53,8 +53,7 @@ function WhyUs() {
               <div
                 key={index}
                 className="
-                opacity-90
-                hover:opacity-100
+
                 hover:scale-105
                 transition-all
                 duration-300
