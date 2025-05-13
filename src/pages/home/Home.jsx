@@ -12,7 +12,6 @@ import HowItWorks from "../../assets/homeAssets/HowItWorks.png";
 
 import TopHeader from "../../components/TopHeader";
 import LoanTabs from "../../componentsTwo/LoanTabs/LoanTabs";
-import Button from "../../components/Button";
 import WhyUs from "../../componentsTwo/WhyUS/WhyUs";
 import EMICalculator from "../../componentsTwo/EMI/EMICalculator";
 import TestimonialSlider from "../../componentsTwo/testimonial/TestimonialSlider";
@@ -314,7 +313,8 @@ function Home() {
           subHead="Happy Clients with Appropriate Financing"
         />
         <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 pt-4 sm:pt-0 ">
-        Hear how we’ve helped clients achieve their dreams with the right financial solutions.
+          Hear how we’ve helped clients achieve their dreams with the right
+          financial solutions.
         </p>
         <TestimonialSlider />
       </section>

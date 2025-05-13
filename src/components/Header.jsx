@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import vite from "../assets/vite.svg";
 import logo from "../assets/images/Layer1.svg";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import {services} from '../pages/services/servicesData';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,17 +29,10 @@ const Header = () => {
     { to: "/about", label: "About" },
     {
       label: "Services",
-      submenu: [
-        { to: "/services/working-capital", label: "Working Capital" },
-        { to: "/services/business-loan", label: "Business Loan" },
-        { to: "/services/personal-loan", label: "Personal Loan" },
-        { to: "/services/home-loan", label: "Home Loan" },
-        { to: "/services/loan-against-property", label: "Loan Against Property" },
-        { to: "/services/auto-loan", label: "Auto Loan" },
-        { to: "/services/health-insurance", label: "Health Insurance" },
-        { to: "/services/life-insurance", label: "Life Insurance" },
-        { to: "/services/general-insurance", label: "General Insurance" },
-      ],
+      submenu: services.map(s => ({
+        to: `/services/${s.slug}`,
+        label: s.title
+      }))
     },
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },

@@ -17,6 +17,7 @@ import TermsCondition from "../pages/TermsCondition";
 import PageNotFound from "../pages/PageNotFound";
 import { DropDownProvider } from "../context/DropDownContext";
 import Testimonials from "../components/Testimonials";
+import Services from "../pages/services/Services";
  
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
       <Route path="/terms-condition" element={<TermsCondition />} />
       <Route path="*" element={<PageNotFound/>}/>
       <Route path="/testimonials" element={<Testimonials/>}/>
+      <Route path="/services/:slug" element={<Services/>}/>
     </Routes>
     <Footer/>
 
