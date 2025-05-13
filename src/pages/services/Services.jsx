@@ -118,7 +118,7 @@ const Services = () => {
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h2
               ref={sectionTitleRef}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#002c6a] h-[44px]"
+              className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-bold text-[#002c6a] h-[124px]"
             ></h2>
             <p className="text-[#333] text-sm sm:text-base leading-relaxed">
               {service.sectionDescription}
@@ -177,7 +177,7 @@ const Services = () => {
 
         <div className="w-full flex flex-col-reverse lg:flex-row gap-6 items-center lg:items-start justify-between">
           <div className="w-full lg:w-[56%] text-center lg:text-left">
-            <h2 ref={helpTitleRef} className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-extrabold text-[#002c6a] h-[116px]">
+            <h2 ref={helpTitleRef} className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-bold text-[#002c6a] h-[116px]">
               
             </h2>
             <p className="pt-4 sm:pt-5 md:pt-6 max-w-[90%] mx-auto lg:mx-0 lg:max-w-[80%]">
