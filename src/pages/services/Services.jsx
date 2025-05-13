@@ -20,6 +20,7 @@ const Services = () => {
   const service = services.find((s) => s.slug === slug);
 
   const sectionTitleRef = useRef();
+  const helpTitleRef = useRef();
 
   useGSAP(() => {
     if (service && sectionTitleRef.current) {
@@ -38,6 +39,23 @@ const Services = () => {
         }
       );
     }
+
+    if (service && helpTitleRef.current) {
+        gsap.fromTo(
+          helpTitleRef.current,
+          { text: "" },
+          {
+            text: "Need help preparing your documents?",
+            duration: 2,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: helpTitleRef.current,
+              start: "top 100%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
   }, [service]);
 
   if (!service) {
@@ -100,7 +118,7 @@ const Services = () => {
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h2
               ref={sectionTitleRef}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#002c6a] mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#002c6a] h-[44px]"
             ></h2>
             <p className="text-[#333] text-sm sm:text-base leading-relaxed">
               {service.sectionDescription}
@@ -159,8 +177,8 @@ const Services = () => {
 
         <div className="w-full flex flex-col-reverse lg:flex-row gap-6 items-center lg:items-start justify-between">
           <div className="w-full lg:w-[56%] text-center lg:text-left">
-            <h2 ref={sectionTitleRef} className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-extrabold text-[#002c6a]">
-              Need help preparing your documents?
+            <h2 ref={helpTitleRef} className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-extrabold text-[#002c6a] h-[116px]">
+              
             </h2>
             <p className="pt-4 sm:pt-5 md:pt-6 max-w-[90%] mx-auto lg:mx-0 lg:max-w-[80%]">
               We understand that paperwork can feel overwhelming especially when
