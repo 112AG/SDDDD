@@ -3,7 +3,7 @@ import Ornament from "../assets/SDContact/Ornament.png";
 import Icon from "../assets/SDContact/Icon.png";
 import Icon2 from "../assets/SDContact/Icon2.png";
 import OurHelpers from "../assets/SDContact/OurHelpers.png";
-import TelePhoneOne from "../assets/SDContact/TelePhoneOne.png";
+import TelephoneOne from "../assets/SDContact/TelePhoneOne.png";
 import TelephoneTwo from "../assets/SDContact/TelePhoneTwo.png";
 import ContactUsForm from "../componentsTwo/ContactUsForm";
 import TelephoneThree from "../assets/SDContact/TelephoneThree.png";
@@ -64,7 +64,7 @@ function Contact() {
         </div>
 
         <img
-          src={TelePhoneOne}
+          src={TelephoneOne}
           alt="TelePhone"
           className="absolute right right-0 top-[24%] w-[22%]"
         />
