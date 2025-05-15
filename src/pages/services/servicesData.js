@@ -1,4 +1,4 @@
-import CapitalLoan from '../../assets/Services/CapitalLoan.png';
+import CapitalLoan from '../../assets/Services/CapitalLoan.jpg';
 import BusinessLoan from '../../assets/Services/BusinessLoan.png';
 import PersonalLoan from '../../assets/Services/PersonalLoan.png';
 import HomeLoan from '../../assets/Services/HomeLoan.png';
@@ -173,11 +173,11 @@ export const services = [
         "Cover your home, vehicle, and valuables with our reliable general insurance policies. Simple process, strong coverage.",
       buttonText: "Call now",
       buttonLink: "#",
-      sectionTag: GeneralInsurance,
+      sectionTag: "Insurance",
       sectionTitle: "What working General Insurance",
       sectionDescription:
         "Shield your valuable assets with our range of General Insurance products. From motor and home insurance to travel and commercial policies, we cover risks that life throws your way. Whether it’s car damage, lost luggage, fire, or theft, our plans offer wide-ranging protection with easy claims and quick policy issuance. Choose from customizable plans suited to your lifestyle or business requirements. With 24/7 customer support, paperless renewals, and affordable premiums, our general insurance products ensure that you're covered wherever you are, whatever you own. Protect what matters most—effortlessly.",
-      image: "general-insurance.jpg",
+      image: GeneralInsurance,
       features: {
         keyFeatures: ["Wide Coverage", "Quick Claims", "Affordable Premiums"],
         eligibilityCriteria: ["Asset Ownership", "Policy Details", "Valid Docs"],
