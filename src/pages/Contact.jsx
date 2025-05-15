@@ -3,7 +3,7 @@ import Ornament from "../assets/SDContact/Ornament.png";
 import Icon from "../assets/SDContact/Icon.png";
 import Icon2 from "../assets/SDContact/Icon2.png";
 import OurHelpers from "../assets/SDContact/OurHelpers.png";
-import TelephoneOne from "../assets/SDContact/TelePhoneOne.png";
+import TelephoneOne from '../assets/SDContact/TelephoneOne.png';
 import TelephoneTwo from "../assets/SDContact/TelePhoneTwo.png";
 import ContactUsForm from "../componentsTwo/ContactUsForm";
 import TelephoneThree from "../assets/SDContact/TelephoneThree.png";
