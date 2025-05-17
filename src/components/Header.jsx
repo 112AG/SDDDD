@@ -8,22 +8,15 @@ import { services } from "../pages/services/servicesData";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); // for mobile submenu
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 4);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-
-  const toggleDropdown = (label) => {
-    setActiveDropdown((prev) => (prev === label ? null : label));
-  };
 
   const activeLinkClass = "text-[#F4C520] after:w-full";
 
@@ -65,11 +58,20 @@ const Header = () => {
         >
           {links.map((link, i) =>
             link.submenu ? (
-              <div className="relative group" key={i}>
-                <span className={`cursor-pointer text-xl`}>
-                  {link.label}
-                </span>
-                <div className="absolute left-0 top-full mt-2 bg-white overflow-hidden shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 w-52">
+              <div
+                className="relative group"
+                key={i}
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
+                <span className="cursor-pointer text-xl">{link.label}</span>
+                <div
+                  className={`absolute left-0 top-full mt-2 bg-white overflow-hidden shadow-lg rounded-md z-50 w-52 transition-all duration-300 ${
+                    dropdownOpen
+                      ? "opacity-100 visible"
+                      : "opacity-0 invisible"
+                  }`}
+                >
                   {link.submenu.map((sublink, idx) => (
                     <NavLink
                       key={idx}
@@ -98,7 +100,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
-            onClick={toggleMenu}
+            onClick={() => setMenuOpen(!menuOpen)}
             className={`text-[32px] transition-colors ${
               scrolled ? "text-black" : "text-white"
             }`}
@@ -110,7 +112,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed top-0 right-0 w-[54%] h-full bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+        className={`fixed top-0 right-0 w-[70%] sm:w-[60%] md:hidden h-full bg-white shadow-lg z-40 transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -119,33 +121,33 @@ const Header = () => {
           <button
             onClick={() => setMenuOpen(false)}
             className="text-[32px] text-black"
-            aria-label="Close menu"
           >
             <HiOutlineX />
           </button>
         </div>
 
-        {/* Mobile Menu Links */}
-        <div className="flex flex-col gap-6 px-12 py-4 text-black font-medium text-[18px]">
+        {/* Mobile Links */}
+        <div className="flex flex-col gap-6 px-8 py-4 text-black font-medium text-[18px]">
           {links.map((link, i) =>
             link.submenu ? (
               <div key={i}>
                 <button
-                  className="block font-semibold text-lg w-full text-left"
-                  onClick={() => toggleDropdown(link.label)}
+                  onClick={() =>
+                    setDropdownOpen((prev) =>
+                      prev === link.label ? false : link.label
+                    )
+                  }
+                  className="w-full text-left font-semibold text-lg"
                 >
                   {link.label}
                 </button>
-                {activeDropdown === link.label && (
+                {dropdownOpen === link.label && (
                   <div className="ml-4 mt-1 flex flex-col gap-2">
                     {link.submenu.map((sublink, idx) => (
                       <NavLink
                         key={idx}
                         to={sublink.to}
-                        onClick={() => {
-                          setMenuOpen(false);
-                          setActiveDropdown(null);
-                        }}
+                        onClick={() => setMenuOpen(false)}
                         className="text-base text-gray-700"
                       >
                         {sublink.label}
@@ -158,10 +160,7 @@ const Header = () => {
               <NavLink
                 key={link.to}
                 to={link.to}
-                onClick={() => {
-                  setMenuOpen(false);
-                  setActiveDropdown(null);
-                }}
+                onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
                   `${isActive ? activeLinkClass : ""}`
                 }
