@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import vite from "../assets/vite.svg";
 import logo from "../assets/images/Layer1.svg";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
-import {services} from '../pages/services/servicesData';
+import { services } from "../pages/services/servicesData";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null); // for mobile submenu
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,8 +19,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  const toggleDropdown = (label) => {
+    setActiveDropdown((prev) => (prev === label ? null : label));
   };
 
   const activeLinkClass = "text-[#F4C520] after:w-full";
@@ -29,10 +32,10 @@ const Header = () => {
     { to: "/about", label: "About" },
     {
       label: "Services",
-      submenu: services.map(s => ({
+      submenu: services.map((s) => ({
         to: `/services/${s.slug}`,
-        label: s.title
-      }))
+        label: s.title,
+      })),
     },
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
@@ -44,7 +47,7 @@ const Header = () => {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-4  lg:px-0">
+      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 lg:px-0">
         {/* Logo */}
         <div className="flex items-center">
           <img
@@ -127,25 +130,38 @@ const Header = () => {
           {links.map((link, i) =>
             link.submenu ? (
               <div key={i}>
-                <span className="block font-semibold text-lg">{link.label}</span>
-                <div className="ml-4 mt-1 flex flex-col gap-2">
-                  {link.submenu.map((sublink, idx) => (
-                    <NavLink
-                      key={idx}
-                      to={sublink.to}
-                      onClick={() => setMenuOpen(false)}
-                      className="text-base text-gray-700"
-                    >
-                      {sublink.label}
-                    </NavLink>
-                  ))}
-                </div>
+                <button
+                  className="block font-semibold text-lg w-full text-left"
+                  onClick={() => toggleDropdown(link.label)}
+                >
+                  {link.label}
+                </button>
+                {activeDropdown === link.label && (
+                  <div className="ml-4 mt-1 flex flex-col gap-2">
+                    {link.submenu.map((sublink, idx) => (
+                      <NavLink
+                        key={idx}
+                        to={sublink.to}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setActiveDropdown(null);
+                        }}
+                        className="text-base text-gray-700"
+                      >
+                        {sublink.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
               </div>
             ) : (
               <NavLink
                 key={link.to}
                 to={link.to}
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  setMenuOpen(false);
+                  setActiveDropdown(null);
+                }}
                 className={({ isActive }) =>
                   `${isActive ? activeLinkClass : ""}`
                 }
