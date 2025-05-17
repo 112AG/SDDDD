@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TopHeader from "../../components/TopHeader";
-import FAQImage from "../../assets/images/FAQ.jpg"
+import FAQImage from "../../assets/images/FAQ.png"
 
 function FAQ() {
     const steps = [
@@ -31,6 +31,7 @@ function FAQ() {
   const toggleStep = (id) => {
     setExpandedStep((prev) => (prev === id ? null : id));
   };
+
   return (
     <div>
       <section className="w-full py-12">

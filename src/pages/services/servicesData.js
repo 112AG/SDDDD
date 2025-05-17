@@ -1,4 +1,4 @@
-import CapitalLoan from '../../assets/Services/CapitalLoan.jpg';
+import CapitalLoan from '../../assets/Services/CapitalLoan.png';
 import BusinessLoan from '../../assets/Services/BusinessLoan.png';
 import PersonalLoan from '../../assets/Services/PersonalLoan.png';
 import HomeLoan from '../../assets/Services/HomeLoan.png';

@@ -12,6 +12,7 @@ import Icon from "../../assets/SDFinanceServices/Icon.png";
 import Icon2 from "../../assets/SDFinanceServices/Icon2.png";
 import SDHelpLine from "../../assets/images/SDHelpLine.png";
 import FAQ from "../../componentsTwo/FAQ/FAQ";
+import HelpSection from "../../componentsTwo/Help/HelpSection";
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
@@ -91,8 +92,8 @@ const Services = () => {
           </h2>
           <div className="w-full text-center">
             <Link
-              className="inline-block bg-[#F4C520] text-black font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
               to="/contact"
+              className="inline-block cursor-pointer relative z-20 bg-[#F4C520] text-black font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
             >
               Contact us
             </Link>
@@ -129,7 +130,7 @@ const Services = () => {
         {/* Feature Cards */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center gap-6 pt-8">
           {/* Key Features */}
-          <div className="w-full sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Key Features Section</h3>
             <ul className="space-y-2 text-sm">
               {service.features.keyFeatures.map((data, index) => (
@@ -142,7 +143,7 @@ const Services = () => {
           </div>
 
           {/* Eligibility */}
-          <div className="w-full sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Eligibility Criteria</h3>
             <ul className="space-y-2 text-sm">
               {service.features.eligibilityCriteria.map((data, index) => (
@@ -155,7 +156,7 @@ const Services = () => {
           </div>
 
           {/* How it works */}
-          <div className="w-full sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">How It Works</h3>
             <ul className="space-y-2 text-sm">
               {service.features.howItWorks.map((data, index) => (
@@ -170,7 +171,7 @@ const Services = () => {
       </div>
 
       {/* Get Help Section */}
-      <div className="container mx-auto max-w-6xl px-4 pt-10">
+      {/* <div className="container mx-auto max-w-6xl px-4 pt-10">
         <div className="w-full flex justify-center">
         <div className="inline-block bg-[#1ad07839] text-[#1AD079] font-medium text-[16px] sm:text-[18px] px-4 py-1 rounded mb-4">
           Get Help
@@ -207,7 +208,8 @@ const Services = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
+      <HelpSection/>
 
       {/* Testimonials */}
       <section className="w-full py-4 md:py-8 lg:py-12 px-4 sm:px-6">

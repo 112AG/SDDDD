@@ -209,7 +209,7 @@ function ContactUsForm() {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-yellow-400 text-[#003A78] font-bold px-8 py-2 rounded-md hover:bg-yellow-300 transition"
+            className="bg-yellow-400 text-[#003A78] w-[378px] max-w-full font-bold px-8 py-2 rounded-md hover:bg-yellow-300 transition"
           >
             Send Us a Message
           </button>

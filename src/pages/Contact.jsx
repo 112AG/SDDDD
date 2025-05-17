@@ -15,6 +15,9 @@ import Location from "../assets/SDContact/Location.png";
 import Mail from "../assets/SDContact/Mail.png";
 import TopHeader from "../components/TopHeader";
 import TestimonialSlider from "../componentsTwo/testimonial/TestimonialSlider";
+import FAQ2 from "../componentsTwo/FAQ2/FAQ2";
+import HelpSection from "../componentsTwo/Help/HelpSection";
+import HelpSection2 from "../componentsTwo/Help/HelpSection"
 
 function Contact() {
   const contactItems = [
@@ -39,6 +42,20 @@ function Contact() {
       value: "C-168/169, Emerald One, Jetalpur Road, Vadodara, Gujarat, India",
     },
   ];
+
+  const faqs = [
+    { id: 1, question: 'What is the interest rate?', answer: 'Random text random text random text random text text random text.' },
+    { id: 2, question: 'How fast can I get the money?', answer: 'You can receive your money within 24 hours after approval.' },
+    { id: 3, question: 'Can I repay early?', answer: 'Yes, early repayment is allowed without any penalties.' },
+    { id: 4, question: 'Is collateral needed?', answer: 'No collateral is required for most loan products.' },
+  ];
+
+  const [openId, setOpenId] = useState(1); // First item expanded by default
+
+  const toggle = (id) => {
+    setOpenId(prev => (prev === id ? null : id));
+  };
+
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-17">
       {/* 1-Hero Section */}
@@ -75,13 +92,14 @@ function Contact() {
         />
       </div>
 
-      {/* 2: Getr in Touch */}
+      {/* 2: Get in Touch */}
       <div className="inline-block bg-[#1ad07839] text-[#1AD079] font-medium text-[18px] px-4 py-1 rounded mb-4">
         Get in Touch
       </div>
+
       {/* 3: Form */}
-      <div className="relative max-w-6xl">
-        <div className="bg-[#003A78] rounded-[20px] max-w-6xl xl:w-3xl 2xl:w-6xl mx-auto px-6 py-10 text-white shadow-lg relative z-40">
+      <div className="relative max-w-6xlpx-4 ">
+        <div className="bg-[#003A78] rounded-[20px] max-w-6xl w-[100vw] sm:w-full xl:w-3xl 2xl:w-6xl mx-auto px-6 py-10 text-white shadow-lg relative z-40">
           <h2 className="text-4xl font-bold text-center">Contact Us</h2>
           <p className="text-center text-green-400 mt-1 mb-8">
             We're Here to Help You Grow
@@ -92,13 +110,13 @@ function Contact() {
         <img
           src={TelephoneThree}
           alt=""
-          className="absolute -left-30 -top-30 z-9"
+          className="absolute -left-30 -top-30 z-9 hidden lg:inline"
         />
-        <img src={Dailer} alt="" className="absolute -right-60 bottom-0" />
+        <img src={Dailer} alt="" className="absolute -right-60 bottom-0 hidden lg:inline" />
       </div>
 
       {/* 4:Help */}
-      <div className="max-w-6xl flex flex-col items-center justify-center">
+      {/* <div className="max-w-6xl flex flex-col items-center justify-center">
         <div className="inline-block bg-[#1ad07839] text-[#1AD079] font-medium text-[18px] px-4 py-1 rounded mb-4">
           Get Help
         </div>
@@ -125,8 +143,8 @@ function Contact() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
               {contactItems.map((item, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <img src={item.icon} alt="" className="h-[36px]" />
+                <div key={index} className="flex items-center gap-1 space-x-3">
+                  <img src={item.icon} alt="" className="h-[40px]" />
                   <div>
                     <h4 className="font-semibold text-black">{item.title}</h4>
                     <p className="text-gray-500 text-[10px] font-semibold">
@@ -138,9 +156,11 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
-
+      </div> */}
+<HelpSection/>
       {/* 5:FAQ */}
+      <FAQ2/>
+
 
 
       {/* 6:Testimonial */}
