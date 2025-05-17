@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import vite from "../assets/vite.svg";
 import logo from "../assets/images/Layer1.svg";
@@ -8,15 +8,46 @@ import { services } from "../pages/services/servicesData";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [desktopSubmenuOpen, setDesktopSubmenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
+  const desktopSubmenuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 4);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close desktop submenu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        desktopSubmenuRef.current &&
+        !desktopSubmenuRef.current.contains(event.target)
+      ) {
+        setDesktopSubmenuOpen(false);
+      }
+    };
+    if (desktopSubmenuOpen) {
+      window.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => window.removeEventListener("mousedown", handleClickOutside);
+  }, [desktopSubmenuOpen]);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const toggleDesktopSubmenu = () => {
+    setDesktopSubmenuOpen((prev) => !prev);
+  };
+
+  const toggleMobileSubmenu = () => {
+    setMobileSubmenuOpen((prev) => !prev);
+  };
 
   const activeLinkClass = "text-[#F4C520] after:w-full";
 
@@ -59,15 +90,26 @@ const Header = () => {
           {links.map((link, i) =>
             link.submenu ? (
               <div
-                className="relative group"
+                className="relative"
                 key={i}
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
+                ref={desktopSubmenuRef}
+                onMouseEnter={() => setDesktopSubmenuOpen(true)}
+                onMouseLeave={() => setDesktopSubmenuOpen(false)}
               >
-                <span className="cursor-pointer text-xl">{link.label}</span>
+                {/* Clickable label toggles submenu */}
+                <span
+                  onClick={toggleDesktopSubmenu}
+                  className={`cursor-pointer text-xl select-none ${
+                    desktopSubmenuOpen ? "text-[#F4C520]" : ""
+                  }`}
+                >
+                  {link.label}
+                </span>
+
+                {/* Submenu */}
                 <div
-                  className={`absolute left-0 top-full mt-2 bg-white overflow-hidden shadow-lg rounded-md z-50 w-52 transition-all duration-300 ${
-                    dropdownOpen
+                  className={`absolute left-0 top-full mt-2 bg-white overflow-hidden shadow-lg rounded-md transition-all duration-300 z-50 w-52 ${
+                    desktopSubmenuOpen
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
                   }`}
@@ -77,6 +119,7 @@ const Header = () => {
                       key={idx}
                       to={sublink.to}
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      onClick={() => setDesktopSubmenuOpen(false)}
                     >
                       {sublink.label}
                     </NavLink>
@@ -100,7 +143,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={toggleMenu}
             className={`text-[32px] transition-colors ${
               scrolled ? "text-black" : "text-white"
             }`}
@@ -112,7 +155,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed top-0 right-0 w-[70%] sm:w-[60%] md:hidden h-full bg-white shadow-lg z-40 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 w-[54%] h-full bg-white shadow-lg transform transition-transform duration-300 z-40 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -121,33 +164,33 @@ const Header = () => {
           <button
             onClick={() => setMenuOpen(false)}
             className="text-[32px] text-black"
+            aria-label="Close menu"
           >
             <HiOutlineX />
           </button>
         </div>
 
-        {/* Mobile Links */}
-        <div className="flex flex-col gap-6 px-8 py-4 text-black font-medium text-[18px]">
+        {/* Mobile Menu Links */}
+        <div className="flex flex-col gap-6 px-12 py-4 text-black font-medium text-[18px]">
           {links.map((link, i) =>
             link.submenu ? (
               <div key={i}>
-                <button
-                  onClick={() =>
-                    setDropdownOpen((prev) =>
-                      prev === link.label ? false : link.label
-                    )
-                  }
-                  className="w-full text-left font-semibold text-lg"
+                <span
+                  onClick={toggleMobileSubmenu}
+                  className="block font-semibold text-lg cursor-pointer select-none"
                 >
                   {link.label}
-                </button>
-                {dropdownOpen === link.label && (
+                </span>
+                {mobileSubmenuOpen && (
                   <div className="ml-4 mt-1 flex flex-col gap-2">
                     {link.submenu.map((sublink, idx) => (
                       <NavLink
                         key={idx}
                         to={sublink.to}
-                        onClick={() => setMenuOpen(false)}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setMobileSubmenuOpen(false);
+                        }}
                         className="text-base text-gray-700"
                       >
                         {sublink.label}
