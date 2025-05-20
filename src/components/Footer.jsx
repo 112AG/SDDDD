@@ -15,7 +15,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li><Link to="/" className={linkClass}>Home</Link></li>
             <li><Link to="/about" className={linkClass}>About Us</Link></li>
-            <li><Link to="/services" className={linkClass}>Our Services</Link></li>
+            <li><Link to="services/working-capital-loans" className={linkClass}>Our Services</Link></li>
             <li><Link to="/testimonials" className={linkClass}>Testimonials</Link></li>
           </ul>
         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
             <li><Link to="/faqs" className={linkClass}>FAQs</Link></li>
             <li><Link to="/how-it-works" className={linkClass}>How It Works</Link></li>
             <li><Link to="/qualifications" className={linkClass}>Qualifications</Link></li>
-            <li><Link to="/marketplace" className={linkClass}>Market Place</Link></li>
+            <li><Link to="/career" className={linkClass}>Career</Link></li>
           </ul>
         </div>
 

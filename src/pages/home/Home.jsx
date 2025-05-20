@@ -137,8 +137,9 @@ function Home() {
             </p>
 
             {/* Button and "Happy Clients" row */}
-            <div className="flex items-center gap-5 pt-4">
+            <div className="flex items-center gap-5 pt-4 cursor-pointer">
               <Link
+              to='/contact'
                 className="
               relative
               bg-[#F4C520]

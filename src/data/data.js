@@ -161,6 +161,7 @@ export const partners = [
   }
 ]
 
+// Home page main services cards data.
 export const data = [
   {
     title: "Business Loans",
@@ -179,7 +180,8 @@ export const data = [
       "Equipment Financing"
     ],
     image: One,
-    buttonLabel: "Boost Your Business"
+    buttonLabel: "Boost Your Business",
+    buttonLink : "/services/business-loan"
   },
   {
     title: "Home Loans",
@@ -193,7 +195,8 @@ export const data = [
       "Expert Guidance"
     ],
     image: Two,
-    buttonLabel: "Own Your Dream Home"
+    buttonLabel: "Own Your Dream Home",
+    buttonLink : "/services/home-loan",
   },
   {
     title: "Personal Loans",
@@ -206,7 +209,8 @@ export const data = [
       "Competitive Rates"
     ],
     image: Three,
-    buttonLabel: "Get Instant Funds"
+    buttonLabel: "Get Instant Funds",
+    buttonLink : "services/personal-loan",
   },
   {
     title: "Property Loan",
@@ -219,7 +223,8 @@ export const data = [
       "Competitive Rates"
     ],
     image: Five,
-    buttonLabel: "Invest in Property"
+    buttonLabel: "Invest in Property",
+    buttonLink : "/services/loan-against-property",
   },
   {
     title: "Auto Loans",
@@ -232,7 +237,8 @@ export const data = [
       "Flexible Terms"
     ],
     image: Four,
-    buttonLabel: "Drive Your Dream Car"
+    buttonLabel: "Drive Your Dream Car",
+    buttonLink : "/services/auto-loan",
   }
 ];
 

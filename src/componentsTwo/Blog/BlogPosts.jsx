@@ -8,9 +8,9 @@ export default function BlogPosts() {
     <section className="py-12 px-4 xl:px-0 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold">Our Blog</h2>
-        <button className="border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-50 transition">
+        <Link to="/blog" className="border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-50 transition">
           View More
-        </button>
+        </Link>
       </div>
 
       <div className="flex flex-wrap md:gap-6 gap-4 gap-y-3.5 justify-evenly md:justify-between">

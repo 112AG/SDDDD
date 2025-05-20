@@ -83,10 +83,10 @@ const Services = () => {
             alt="Icon"
             className="hidden sm:block h-[100px] w-[100px] absolute -left-[14%] top-[62%]"
           />
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold mb-4 leading-snug relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mb-4 leading-snug relative z-10">{service.title}</h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-bold mb-4 leading-snug relative z-10">
             {service.subtitle}
-          </h1>
+          </h2>
           <h2 className="text-base sm:text-lg md:text-xl text-center mb-4">
             {service.description}
           </h2>

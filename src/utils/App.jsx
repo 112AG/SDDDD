@@ -8,26 +8,19 @@ import Blog from "../pages/Blog";
 import Calculator from "../pages/Calculator";
 import Career from "../pages/Career";
 import Contact from "../pages/Contact";
-import Category from "../pages/Category";
 import Events from "../pages/Events";
-import Insurance from "../pages/Insurance";
 import MediaCoverage from "../pages/MediaCoverage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsCondition from "../pages/TermsCondition";
 import PageNotFound from "../pages/PageNotFound";
-import { DropDownProvider } from "../context/DropDownContext";
 import Testimonials from "../components/Testimonials";
 import Services from "../pages/services/Services";
  
 
 function App() {
-  // const {setShowCategory, setShowInsurance} = useContext(DropDownProvider)
    return (
     <div 
-    // onMouseEnter={() => {
-    //   setShowCategory(false);
-    //   setShowInsurance(false);
-    // }}
+
     className="animate-fadeIn"
     >
       <Header/>
@@ -38,15 +31,14 @@ function App() {
       <Route path="/emi-calculator" element={<Calculator />} />
       <Route path="/career" element={<Career />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/category" element={<Category />} />
       <Route path="/events" element={<Events />} />
-      <Route path="/insurance" element={<Insurance />} />
       <Route path="/media-coverage" element={<MediaCoverage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-condition" element={<TermsCondition />} />
       <Route path="*" element={<PageNotFound/>}/>
       <Route path="/testimonials" element={<Testimonials/>}/>
       <Route path="/services/:slug" element={<Services/>}/>
+      <Route path="/emi-calculator" element={<Calculator/>}/>
     </Routes>
     <Footer/>
 

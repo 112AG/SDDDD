@@ -88,7 +88,7 @@ function LoanTabs() {
                   </li>
                 ))}
               </ul>
-              <Button btn={selected.buttonLabel} link="#" />
+              <Button btn={selected.buttonLabel} link={selected.buttonLink} />
             </div>
 
             {/* Right Content (Image) */}
@@ -123,7 +123,7 @@ function LoanTabs() {
                   </li>
                 ))}
               </ul>
-              <Button btn={loanProducts[0].buttonLabel} link="#" />
+              <Button btn={loanProducts[0].buttonLabel} link="/services/business-loan" />
             </div>
 
             {/* Right Default (Image) */}
