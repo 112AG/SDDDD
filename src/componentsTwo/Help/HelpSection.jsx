@@ -42,13 +42,14 @@ const HelpSection = () => {
         <div className="flex flex-col lg:flex-row justify-between w-full items-center lg:items-start gap-10">
             {/* Right: Image Section */}
           <div className="w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[368px]">
-          <div className="h-[368px] w-[368px] bg-[#023B75] rounded-[28px] relative flex justify-center">
-            <img
-              src={customerHelper2}
-              alt="Image"
-              className="absolute bottom-0 h-[466px]"
-            />
-          </div>
+          <div className="relative flex justify-center rounded-[20px] bg-[#023B75] h-[300px] w-[300px] sm:h-[368px] sm:w-[368px] sm:rounded-[28px]">
+  <img
+    src={customerHelper2}
+    alt="Image"
+    className="absolute bottom-0 h-[380px] sm:h-[466px] object-contain"
+  />
+</div>
+
           </div>
 
           {/* Left: Text Section */}
