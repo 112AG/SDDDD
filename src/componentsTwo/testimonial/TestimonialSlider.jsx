@@ -44,7 +44,7 @@ export default function TestimonialSlider() {
       {/* Navigation Buttons on Top of Cards */}
       <button
         onClick={prev}
-        className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md border border-gray-300 hover:bg-green-100"
+        className="absolute z-20 left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md border border-gray-300 hover:bg-green-100"
       >
         <FaChevronLeft />
       </button>
@@ -96,7 +96,7 @@ export default function TestimonialSlider() {
       
       <button
         onClick={next}
-        className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md border border-gray-300 hover:bg-green-100"
+        className="absolute z-20 right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md border border-gray-300 hover:bg-green-100"
       >
         <FaChevronRight />
       </button>
