@@ -39,7 +39,7 @@ function FAQ() {
 
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">
           {/* Image */}
-          <div className="md:w-5/12">
+          <div className="w-full md:w-5/12">
             <img
               className="h-full w-full object-cover rounded-3xl"
               src={FAQImage}
