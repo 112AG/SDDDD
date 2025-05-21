@@ -39,7 +39,7 @@ function FAQ() {
 
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">
           {/* Image */}
-          <div className="w-full md:w-5/12">
+          <div className="w-[244px] md:w-5/12">
             <img
               className="h-full w-full object-cover rounded-3xl"
               src={FAQImage}
@@ -47,7 +47,7 @@ function FAQ() {
             />
           </div>
           {/* Steps */}
-          <div className="w-full md:w-7/12">
+          <div className="w-[264px] md:w-7/12">
             {steps.map((step) => (
               <div
                 key={step.id}
@@ -55,7 +55,7 @@ function FAQ() {
                 onClick={() => toggleStep(step.id)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-[14px] sm:text-lg">
                     {step.id}. {step.title}
                   </h3>
                   <div
