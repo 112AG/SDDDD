@@ -33,7 +33,7 @@ function TopHeader({ top, subHead }) {
       </div>
       <h2
         ref={textRef}
-        className="text-3xl md:text-4xl font-extrabold text-[#002c6a] h-[44px]"
+        className="text-3xl md:text-4xl font-extrabold text-[#002c6a] h-[44px] px-2"
       ></h2>
     </div>
   );
