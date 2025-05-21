@@ -40,7 +40,7 @@ export default function TestimonialSlider() {
   }, [cardsToShow]);
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto py-8 overflow-hidden">
+    <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
       {/* Navigation Buttons on Top of Cards */}
       <button
         onClick={prev}

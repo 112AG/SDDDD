@@ -24,6 +24,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
+import CTA from "../../componentsTwo/CTA/CTA";
+import Partners from "../../componentsTwo/Partners/Partners";
 
 function Home() {
   gsap.registerPlugin(ScrollTrigger, TextPlugin, useGSAP);
@@ -34,6 +36,9 @@ function Home() {
   const textRef = useRef();
   const avatarsRef = useRef([]);
   const numberRef = useRef(null);
+
+  const [expandedStep, setExpandedStep] = useState(null);
+
 
   useGSAP(() => {
     // Hero Section Animation Left and right------------------------
@@ -88,14 +93,13 @@ function Home() {
     //
   }, []);
 
-  const [expandedStep, setExpandedStep] = useState(1);
 
   const toggleStep = (id) => {
     setExpandedStep((prev) => (prev === id ? null : id));
   };
 
   return (
-    <div className="w-full bg-[#f6f8fb]">
+    <div className="w-full bg-[#f6f8fb] flex flex-col items-center justify-center gap-16 sm:gap-32 pb-12">
       {/* Section 1: Hero ✅*/}
       <div className="w-full bg-[#003274] overflow-hidden">
         <div
@@ -195,29 +199,29 @@ function Home() {
       </div>
 
       {/* Section 2: Loan Tabs ✅*/}
-      <section className="w-full py-8 md:py-11 ">
+      <section className="w-full   ">
         <TopHeader top="Who we are" subHead="Our Main Service" />
         <LoanTabs />
       </section>
 
       {/* Section 3: Why Us */}
-      <section className="w-full">
+      <section className="w-full px-4">
         <TopHeader top="Why us" subHead="Why SD Financials?" />
         <WhyUs />
       </section>
 
       {/* Section 4: Achievements */}
-      <section className="w-full sm:py-6 py-4 ">
+      <section className="w-full ">
         <TopHeader
           top="Achievements"
           subHead="Our Achievements & Certificates"
         />
-        <p className="text-center text-black text-lg mt-4 mb-10 px-4 pt-4 sm:pt-0">
+        <p className="text-center text-black text-lg mb-10 sm:px-4 ">
           Recognized for excellence, innovation, and trusted financial
           solutions.
         </p>
         <div className="h-full w-full bg-[#003274] py-12">
-          <div className="max-w-6xl mx-auto flex flex-wrap justify-center sm:justify-between gap-16 sm:gap-16 xl:px-0 px-4">
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center [@media(min-width:579px)]:justify-between  gap-y-12 sm:gap-16 xl:px-0 px-4">
             {awards.map((award, index) => (
               <div key={index} className="text-center text-white w-[140px]">
                 <img src={Award} alt="Award" className="h-24 mx-auto mb-2" />
@@ -233,11 +237,11 @@ function Home() {
       </section>
 
       {/* Section 5: How It Works */}
-      <section className="w-full py-12">
+      <section className="w-full ">
         <TopHeader top="Process" subHead="How it works" />
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">
           {/* Image */}
-          <div className="md:w-5/12">
+          <div className="w-full md:w-5/12 md:h-[444px]">
             <img
               className="h-full w-full object-cover rounded-3xl"
               src={HowItWorks}
@@ -284,36 +288,20 @@ function Home() {
       </section>
 
       {/* Section 6: EMI Calculator */}
-      <section className="w-full sm:py-12 xl:px-0 px-4">
+      <section className="w-full  xl:px-0 px-4">
         <EMICalculator />
       </section>
 
       {/* Section 7: Partners */}
-      <section className="w-full py-12">
-        <TopHeader top="Partners" subHead="Trusted by Companies and Partners" />
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10 px-4 xl:px-0">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-white py-3 px-0 md:p-4 rounded-lg flex justify-center items-center shadow hover:shadow-md transition"
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="h-10 object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+      <Partners/>
 
       {/* Section 8: Testimonials */}
-      <section className="w-full py-4 md:py-8 lg:py-12 px-4 sm:px-0">
+      <section className="w-full  px-4 sm:px-0">
         <TopHeader
           top="Testimonials"
           subHead="Happy Clients with Appropriate Financing"
         />
-        <p className="text-center text-[#7F7F8C] text-lg mt-4 mb-4 md:mb-8 pt-4 sm:pt-0 ">
+        <p className="text-center text-[#7F7F8C] text-lg mt-4  pt-4 sm:pt-0 ">
           Hear how we’ve helped clients achieve their dreams with the right
           financial solutions.
         </p>
@@ -321,44 +309,12 @@ function Home() {
       </section>
 
       {/* Section 9: Blog */}
-      <section className="w-full md:py-12">
+      <section className="w-full">
         <BlogPosts />
       </section>
 
       {/* Section 10: CTA */}
-      <section className="py-12 px-4">
-        <div className="bg-[#003366] text-white rounded-2xl py-18 text-center relative overflow-hidden max-w-6xl mx-auto px-4">
-          {/* <p className="absolute top-4 left-4 text-[#1D4ED8] font-semibold">
-            Register
-          </p> */}
-          <h2 className="text-3xl font-bold mb-4">Get In Touch With Us</h2>
-          <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-            Ready to apply or have questions? Our team is here to help. Reach
-            out today for personalized financial solutions.
-          </p>
-          <Link
-            to="/contact"
-            className="
-              relative
-              bg-[#F4C520]
-              text-black
-              font-semibold
-              px-6
-              py-3
-              rounded-md
-              shadow-[-3px_3px_0_#1AD079]
-              hover:shadow-[-2px_2px_0_#1AD079]
-              active:shadow-none
-              transition-all
-              lg:text-sm
-              text-[12px]
-              whitespace-nowrap
-            "
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+      <CTA/>
     </div>
   );
 }

@@ -11,8 +11,10 @@ import Ornament from "../../assets/SDFinanceServices/Ornament.png";
 import Icon from "../../assets/SDFinanceServices/Icon.png";
 import Icon2 from "../../assets/SDFinanceServices/Icon2.png";
 import SDHelpLine from "../../assets/images/SDHelpLine.png";
+import FAQ2 from '../../componentsTwo/FAQ2/FAQ2'
 import FAQ from "../../componentsTwo/FAQ/FAQ";
 import HelpSection from "../../componentsTwo/Help/HelpSection";
+import CTA from "../../componentsTwo/CTA/CTA";
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
@@ -68,47 +70,62 @@ const Services = () => {
   }
 
   return (
-    <div>
+    <div className="w-full bg-[#f6f8fb] flex flex-col items-center justify-center gap-22 sm:gap-32 pb-12">
       {/* Top Hero Section */}
-      <div className="h-[80vh] w-full sm:h-screen bg-[#001E5A] text-white relative">
-        <div className="w-full px-4 sm:w-[80%] md:w-[60%] max-w-6xl mx-auto flex flex-col items-center justify-center h-full relative">
-          <img src={Ornament} alt="Light" className="absolute" />
-          <img
-            src={Icon2}
-            alt="Icon"
-            className="hidden sm:block h-[100px] w-[100px] absolute left-[98%] top-[22%]"
-          />
-          <img
-            src={Icon}
-            alt="Icon"
-            className="hidden sm:block h-[100px] w-[100px] absolute -left-[14%] top-[62%]"
-          />
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold mt- leading-snug relative lg:mt-12">{service.title}</h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-bold mb-4 leading-snug relative">
-            {service.subtitle}
-          </h2>
-          <h2 className="text-base sm:text-lg md:text-xl text-center mb-4">
-            {service.description}
-          </h2>
-          <div className="w-full text-center">
-            <Link
-              to="/contact"
-              className="inline-block cursor-pointer relative z-20 bg-[#F4C520] text-black font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
-      </div>
+      <div className="h-[80vh] w-full sm:h-screen bg-[#001E5A] text-white relative overflow-hidden">
+  <div className="w-full px-4 sm:w-[80%] md:w-[60%] max-w-6xl mx-auto flex flex-col items-center justify-center h-full relative">
+    {/* Background Ornament */}
+    <img src={Ornament} alt="Light" className="absolute" />
+
+    {/* Top Right Icon */}
+    <img
+      src={Icon2}
+      alt="Icon"
+      className="hidden sm:block h-[100px] w-[100px] absolute right-0 top-[22%]"
+    />
+
+    {/* Bottom Left Icon */}
+    <img
+      src={Icon}
+      alt="Icon"
+      className="hidden sm:block h-[100px] w-[100px] absolute -left-[14%] top-[62%]"
+    />
+
+    {/* Main Title */}
+    <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold leading-snug relative lg:mt-12">
+      {service.title}
+    </h1>
+
+    {/* Subtitle */}
+    <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-bold mb-4 leading-snug relative">
+      {service.subtitle}
+    </h2>
+
+    {/* Description */}
+    <h2 className="text-base sm:text-lg md:text-xl text-center mb-4">
+      {service.description}
+    </h2>
+
+    {/* Contact Button */}
+    <div className="w-full text-center">
+      <Link
+        to="/contact"
+        className="inline-block cursor-pointer relative z-20 bg-[#F4C520] text-black font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
+      >
+        Contact us
+      </Link>
+    </div>
+  </div>
+</div>
 
       {/* Section Content */}
-      <div className="px-4 py-12 md:py-16 max-w-6xl mx-auto flex flex-col items-center justify-between">
+      <div className="px-4  max-w-6xl mx-auto flex flex-col items-center justify-between">
         <div className="inline-block bg-[#d6fbe4] text-[#1AD079] text-sm font-medium px-4 py-1 rounded mb-6">
           {service.sectionTag}
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10 items-center">
-          <div className="w-full lg:w-[44%] h-[240px] sm:h-[300px] overflow-hidden md:h-[350px] lg:h-[400px] bg-gray-200 rounded-[24px] sm:rounded-[34px]">
+          <div className="w-full lg:w-[44%] h-[400px] bg-gray-200 overflow-hidden rounded-[24px] sm:rounded-[34px]">
             <img
               src={service.image}
               alt="Service Visual"
@@ -128,9 +145,9 @@ const Services = () => {
         </div>
 
         {/* Feature Cards */}
-        <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center gap-6 pt-8">
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center flex-wrap gap-6 pt-8">
           {/* Key Features */}
-          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Key Features Section</h3>
             <ul className="space-y-2 text-sm">
               {service.features.keyFeatures.map((data, index) => (
@@ -143,7 +160,7 @@ const Services = () => {
           </div>
 
           {/* Eligibility */}
-          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Eligibility Criteria</h3>
             <ul className="space-y-2 text-sm">
               {service.features.eligibilityCriteria.map((data, index) => (
@@ -156,7 +173,7 @@ const Services = () => {
           </div>
 
           {/* How it works */}
-          <div className="w-full h-[278px] sm:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">How It Works</h3>
             <ul className="space-y-2 text-sm">
               {service.features.howItWorks.map((data, index) => (
@@ -171,48 +188,10 @@ const Services = () => {
       </div>
 
       {/* Get Help Section */}
-      {/* <div className="container mx-auto max-w-6xl px-4 pt-10">
-        <div className="w-full flex justify-center">
-        <div className="inline-block bg-[#1ad07839] text-[#1AD079] font-medium text-[16px] sm:text-[18px] px-4 py-1 rounded mb-4">
-          Get Help
-        </div>
-        </div>
-
-        <div className="w-full flex flex-col-reverse lg:flex-row gap-6 items-center lg:items-start justify-between">
-          <div className="w-full lg:w-[56%] text-center lg:text-left">
-            <h2
-              ref={helpTitleRef}
-              className="text-2xl sm:text-4xl md:text-[44px] lg:text-[52px] font-bold text-[#002c6a] "
-            ></h2>
-            <p className="pt-4 sm:pt-5 md:pt-6 max-w-[90%] mx-auto lg:mx-0 lg:max-w-[80%]">
-              We understand that paperwork can feel overwhelming especially when
-              you're focused on running a business. That’s why our dedicated
-              support team is here to guide you every step of the way.
-            </p>
-            <p className="py-4 md:py-6 lg:py-8">
-              Talk to Our Experts for free documentation assistance.
-            </p>
-            <Link
-              className="inline-block bg-[#F4C520] text-black font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
-              to="/contact"
-            >
-              Contact us
-            </Link>
-          </div>
-
-          <div className="w-full lg:w-[44%] h-[240px] sm:h-[300px] overflow-hidden md:h-[350px] lg:h-[400px] bg-gray-200 rounded-[24px] sm:rounded-[34px]">
-            <img
-              src={SDHelpLine}
-              className="h-full w-full object-cover"
-              alt="Help Line"
-            />
-          </div>
-        </div>
-      </div> */}
       <HelpSection/>
 
       {/* Testimonials */}
-      <section className="w-full py-4 md:py-8 lg:py-12 px-4 sm:px-6">
+      <section className="w-full px-4 sm:px-6">
         <TopHeader
           top="Testimonials"
           subHead="Happy Clients with Appropriate Financing"
@@ -227,22 +206,11 @@ const Services = () => {
       {/* FAQ */}
       <FAQ />
 
+
       {/* CTA */}
-      <section className="py-12 px-4">
-        <div className="bg-[#003366] text-white rounded-2xl py-12 md:py-16 text-center relative overflow-hidden max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch With Us</h2>
-          <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-            Ready to apply or have questions? Our team is here to help. Reach
-            out today for personalized financial solutions.
-          </p>
-          <Link
-            to="/contact"
-            className="relative bg-[#F4C520] text-black font-semibold px-6 py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+      <CTA/>
+
+
     </div>
   );
 };

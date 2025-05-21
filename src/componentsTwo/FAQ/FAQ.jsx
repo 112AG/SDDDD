@@ -26,7 +26,7 @@ function FAQ() {
         },
       ];
     
-  const [expandedStep, setExpandedStep] = useState(1);
+  const [expandedStep, setExpandedStep] = useState(null);
 
   const toggleStep = (id) => {
     setExpandedStep((prev) => (prev === id ? null : id));
@@ -34,7 +34,7 @@ function FAQ() {
 
   return (
     <div>
-      <section className="w-full py-12">
+      <section className="w-full">
         <TopHeader top="FAQ" subHead="Frequently Asked Questions" />
 
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 xl:px-0 mt-10">

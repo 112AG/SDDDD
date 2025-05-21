@@ -4,6 +4,7 @@ import Icon2 from "../assets/SDFinanceServices/Icon2.png";
 import Ornament from "../assets/SDFinanceServices/Ornament.png";
 import { Link } from "react-router-dom";
 import TopHeader from "../components/TopHeader";
+import CTA from "../componentsTwo/CTA/CTA";
 
 function Career() {
   const whyUs = [
@@ -29,7 +30,7 @@ function Career() {
     },
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-12 justify-center bg-[#f8f9fb]">
+    <div className="w-full bg-[#f6f8fb] flex flex-col items-center justify-center gap-16 sm:gap-32 pb-12">
       {/* Top Hero Section */}
       <div className="h-[80vh] w-full sm:h-screen bg-[#001E5A] text-white relative">
         <div className="w-full px-4 sm:w-[80%] md:w-[60%] max-w-6xl mx-auto flex flex-col items-center justify-center h-full relative">
@@ -65,7 +66,7 @@ function Career() {
       </div>
 
       {/* Job Opening */}
-      <div className='max-w-6xl w-full bg-white rounded-2xl shadow-md flex flex-col items-center justify-center py-12 px-2'>
+      <div className='max-w-6xl w-full  sm:bg-white rounded-2xl shadow-md flex flex-col items-center justify-center py-12 px-2'>
         <TopHeader subHead="Job Openings" top="Openings" />
         <h1 className='text-4xl py-4 font-bold text-[#222222]'>We’re not hiring at the moment</h1>
         <p className='text-[18px] font-semibold leading-tight text-[#5F5F5F] text-center'>
@@ -74,21 +75,7 @@ function Career() {
       </div>
 
       {/* CTA */}
-      <section className="py-12 max-w-6xl w-full px-2">
-        <div className="bg-[#003366] text-white rounded-2xl py-12 md:py-16 text-center relative overflow-hidden max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Get In Touch With Us</h2>
-          <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-            Ready to apply or have questions? Our team is here to help. Reach
-            out today for personalized financial solutions.
-          </p>
-          <Link
-            to="/contact"
-            className="relative bg-[#F4C520] text-black font-semibold px-6 py-3 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] active:shadow-none transition-all text-sm sm:text-base whitespace-nowrap"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+      <CTA/>
     </div>
   );
 }

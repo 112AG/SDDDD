@@ -5,6 +5,7 @@ const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(2470000);
   const [interestRate, setInterestRate] = useState(10);
   const [loanTenure, setLoanTenure] = useState(10);
+  const [isSmUp, setIsSmUp] = useState(false); //// for shadow line no. 41
 
   const [emi, setEmi] = useState(0);
   const [interestAmount, setInterestAmount] = useState(0);
@@ -21,13 +22,26 @@ const EMICalculator = () => {
     setEmi(Math.round(emiCalc));
     setInterestAmount(Math.round(interest));
     setTotalPayable(Math.round(total));
+
+    // for shadow line no. 41
+    const checkScreen = () => {
+      setIsSmUp(window.innerWidth >= 640);
+    };
+
+    checkScreen(); // Initial check
+    window.addEventListener("resize", checkScreen); // Listen to resize
+
+    return () => window.removeEventListener("resize", checkScreen);
   }, [loanAmount, interestRate, loanTenure]);
 
   return (
     <div
-      className="flex max-w-6xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 p-4 sm:p-8 lg:p-16 sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]"
-      style={{ boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }}
-    >
+      className="flex max-w-6xl mx-auto flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 py-4 sm:p-8 lg:p-16 bg-transparent sm:bg-white rounded-xl sm:rounded-2xl lg:rounded-[34px]"
+      style={
+        isSmUp
+          ? { boxShadow: "0px 4px 65px rgba(0, 0, 0, 0.02)" }
+          : undefined
+      }    >
       {/* Left Box */}
       <div className="bg-[#023b75] text-white rounded-2xl lg:rounded-3xl w-full lg:w-auto lg:min-w-[424px] md:max-w-[386px]">
         <div className="p-8">

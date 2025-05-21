@@ -31,10 +31,10 @@ const contactItems = [
 
 const HelpSection = () => {
   return (
-    <section className="w-full py-10 px-4 sm:px-6 bg-white">
+    <section className="w-full px-4 sm:px-6 ">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Tag */}
-        <div className="bg-[#1ad07839] text-[#1AD079] font-medium text-[16px] sm:text-[18px] px-4 py-1 rounded mb-28">
+        <div className="bg-[#1ad07839] text-[#1AD079] font-medium text-[16px] sm:text-[18px] px-4 py-1 rounded mb-26">
           Get Help
         </div>
 
