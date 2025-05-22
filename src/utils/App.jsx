@@ -15,6 +15,7 @@ import TermsCondition from "../pages/TermsCondition";
 import PageNotFound from "../pages/PageNotFound";
 import Testimonials from "../components/Testimonials";
 import Services from "../pages/services/Services";
+import ScrollToTop from "./ScrollToTop";
  
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     className="animate-fadeIn"
     >
       <Header/>
+      <ScrollToTop/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />

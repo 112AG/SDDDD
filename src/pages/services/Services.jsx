@@ -147,7 +147,7 @@ const Services = () => {
         {/* Feature Cards */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between w-full items-center flex-wrap gap-6 pt-8">
           {/* Key Features */}
-          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] md:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Key Features Section</h3>
             <ul className="space-y-2 text-sm">
               {service.features.keyFeatures.map((data, index) => (
@@ -160,7 +160,7 @@ const Services = () => {
           </div>
 
           {/* Eligibility */}
-          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] md:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">Eligibility Criteria</h3>
             <ul className="space-y-2 text-sm">
               {service.features.eligibilityCriteria.map((data, index) => (
@@ -173,7 +173,7 @@ const Services = () => {
           </div>
 
           {/* How it works */}
-          <div className="w-full h-[278px] [@media(min-width:685px)]:w-[48%] lg:w-[30%] bg-[#F4C520] text-black font-semibold p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
+          <div className="w-full h-[278px] md:w-[30%] bg-[#F4C520] text-black font-semibold p-5 lg:p-6 rounded-md shadow-[-3px_3px_0_#1AD079] hover:shadow-[-2px_2px_0_#1AD079] transition-all text-sm whitespace-nowrap">
             <h3 className="font-bold text-lg mb-4">How It Works</h3>
             <ul className="space-y-2 text-sm">
               {service.features.howItWorks.map((data, index) => (

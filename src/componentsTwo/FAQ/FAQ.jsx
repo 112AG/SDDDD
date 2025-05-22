@@ -6,23 +6,23 @@ function FAQ() {
     const steps = [
         {
           id: 1,
-          title: "What is the interest rate?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "How does SD Finance make getting a loan easier for me?",
+          description: "We simplify the entire loan process with minimal paperwork, fast approvals, and expert support—so you can focus on your goals, not the red tape.",
         },
         {
           id: 2,
-          title: "How fast can I get the money?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "What makes SD Finance different from banks and other lenders?",
+          description: "Unlike traditional lenders, we focus on flexibility, transparency, and speed. Our customer-first approach means tailored solutions, not one-size-fits-all products.",
         },
         {
           id: 3,
-          title: "Can I repay early?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "Who can apply for a loan with SD Finance?",
+          description: "Anyone with a valid income source—whether salaried, self-employed, or running a business—can apply. We serve a wide range of customers with personalized options.",
         },
         {
           id: 4,
-          title: "Is collateral needed?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "What support will I get after taking the loan?",
+          description: "We offer ongoing customer service, repayment support, and financial advice throughout your loan journey. You're never alone after disbursal.",
         },
       ];
     

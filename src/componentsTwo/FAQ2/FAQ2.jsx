@@ -5,23 +5,23 @@ function FAQ2() {
     const steps = [
         {
           id: 1,
-          title: "What is the interest rate?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "What makes SD Finance different from other financial companies?",
+          description: "At SD Finance, we focus on speed, transparency, and customer-centric service. Our loan processes are simplified, with minimal documentation, competitive rates, and expert support.",
         },
         {
           id: 2,
-          title: "How fast can I get the money?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "What financial solutions does SD Finance provide?",
+          description: "We offer tailored business, home, and health loan solutions designed to help individuals and companies achieve their goals with ease.",
         },
         {
           id: 3,
-          title: "Can I repay early?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "How experienced is the SD Finance team?",
+          description: "Our team has over 15 years of industry experience and is led by professionals recognized by top institutions like Kotak Bank, Axis Bank, and Tata Capital.",
         },
         {
           id: 4,
-          title: "Is collateral needed?",
-          description: "Random Text.........................................................Bla!Bla!Bla!..",
+          title: "How many customers has SD Finance served so far?",
+          description: "As of 2025, we have proudly served 2,500+ satisfied customers, growing steadily since our inception in 2020.",
         },
       ];
     
