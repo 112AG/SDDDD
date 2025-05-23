@@ -16,6 +16,7 @@ import PageNotFound from "../pages/PageNotFound";
 import Testimonials from "../components/Testimonials";
 import Services from "../pages/services/Services";
 import ScrollToTop from "./ScrollToTop";
+import '../styles/index.css';
  
 
 function App() {
@@ -44,22 +45,6 @@ function App() {
     </Routes>
     <Footer/>
 
-    <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            // transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            // transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 1.4s ease-out;
-        }
-      `}</style>
     </div>
   );
 }
