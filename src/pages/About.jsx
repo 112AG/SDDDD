@@ -6,14 +6,11 @@ import SDFinanceBanner from "../assets/AboutUs/SDFinanceBanner.svg";
 import SDFinanceOffice from "../assets/AboutUs/SDFInance-Office.png";
 import CrossArrow from "../assets/AboutUs/CrossArrow.png";
 import SDAchivements from "../assets/AboutUs/SDAchivements.png";
-import ChairMan from "../assets/Teams/ChairMan.png";
-import BranchManager from "../assets/Teams/BranchManager.png";
-import AreaHead from "../assets/Teams/AreaHead.png";
-import CreativeHead from "../assets/Teams/CreativeHead.png";
-import DigitalMarketingHead from "../assets/Teams/DigitalMarketingHead.png";
-import SalesManager from "../assets/Teams/SalesManager.png";
 import Location from "../assets/AboutUs/Location.svg";
 import Partners from "../componentsTwo/Partners/Partners";
+import Galary from "../componentsTwo/Galaries/Galary";
+import TopHeader from "../components/TopHeader";
+import Teams from "../componentsTwo/Teams/Teams";
 
 function About() {
   const timelineData = [
@@ -66,50 +63,7 @@ function About() {
     { value: "1754", label: "Happy Customers" },
   ];
 
-  const teamData = [
-    {
-      name: "Dharmendra Shukla",
-      position: "Executive Chairman",
-      image: ChairMan,
-      description:
-        "With 15+ years of experience in finance and loan departments, Dharmendra leads SD Finance with expert knowledge and strategic vision. He has been recognized and awarded by reputed institutions such as Kotak Bank, Axis Bank, Aditya Birla, Poonawalla Fincorp, Credit Saison, Tata Capital, and UGrow Capital.",
-    },
-    {
-      name: "Dharmesh Shadwani",
-      position: "Branch Manager",
-      image: BranchManager,
-      description:
-        "Bringing 7 years of experience in finance, Dharmesh ensures smooth branch operations and excellent customer service.",
-    },
-    {
-      name: "Shasi Mishra",
-      position: "Sales Manager",
-      image: SalesManager,
-      description:
-        "With 8 years of experience, Shasi drives sales growth and builds strong client relationships.",
-    },
-    {
-      name: "Sanjay Yadav",
-      position: "Area Head",
-      image: AreaHead,
-      description:
-        "Sanjay has 5 years of experience, overseeing regional operations and business development.",
-    },
-    {
-      name: "Shivakant Chaubey",
-      position: "Digital Marketing Head",
-      image: DigitalMarketingHead,
-      description:
-        "With 4 years of experience, Shivakant leads digital marketing initiatives to expand SD Finance’s online presence.",
-    },
-    {
-      name: "Anuj Tiwari",
-      position: "Creative Head",
-      image: CreativeHead,
-      description:
-        "With 6 years of experience in the creative industry, Anuj specializes in brand strategies and design. He helps bring consistency and creativity to the brand in both direction and visual identity.",
-    },
-  ];
+
 
   const OurLocations = [
     {
@@ -303,35 +257,16 @@ function About() {
       </div>
 
       {/* Our Management Section */}
-      {/* <div className="flex flex-col items-center justify-center gap-4 md:gap-8 px-4 max-w-6xl">
-        <div className="inline-block bg-[#d6fbe4] text-[#1AD079] text-sm font-medium px-4 py-1 rounded mb-6">
-          About Us
-        </div>
-
-        <div className='w-6xl'>
-          <h1 className="text-[#003274] text-5xl text-left font-bold">Our Achivements</h1>
-          <div className='w-full pt-18 grid grid-cols-2 py-12 '>
-            {
-              teamData.map((data) =>(
-                <div className="relative">
-                <div className="h-[280px] w-[250px] bg-[#109E73] rounded-[9.5px]"></div>
-                <div className="h-[280px] w-[250px] bg-gray-200 rounded-[9.5px] absolute bottom-1 left-1 overflow-hidden">
-                  <img src={data.image} alt="Images" className='h-full w-full object-cover' />
-                </div>
-                <div className="h-[200px] w-[300px] bg-[#F4C520] rounded-[9.5px] absolute -bottom-10 left-[30%]"></div>
-              </div>
-              ))
-            }
-          </div>
-        </div>
-      </div> */}
+      <Teams/>
 
       {/* Our Branches  */}
-      <div className='max-w-6xl mx-auto flex flex-col items-center justify-center'>
+      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
         <div className="inline-block bg-[#d6fbe4] text-[#1AD079] text-sm font-medium px-4 py-1 rounded mb-6">
           Branches
         </div>
-        <h1 className="text-[#003274] text-5xl text-left font-bold">Our Branches</h1>
+        <h1 className="text-[#003274] text-5xl text-left font-bold">
+          Our Branches
+        </h1>
         <p className="py-4 text-[#5F5F5F] leading-6 text-center text-[18px]">
           At SD Finance, we are committed to making financial solutions easily
           accessible to individuals and businesses across India. To serve our
@@ -339,7 +274,7 @@ function About() {
           cities, ensuring that we are always close to you, providing quick
           approvals, competitive rates, and expert guidance.
         </p>
-        <div className='flex justify-between flex-wrap px-4 w-full pt-12'>
+        <div className="flex justify-center gap-4 sm:justify-between flex-wrap px-4 w-full pt-12">
           {OurLocations.map((location, index) => (
             <div
               key={index}
@@ -351,9 +286,10 @@ function About() {
           font-semibold
           px-6
           py-3
+          hover:scale-105
           rounded-md
           shadow-[3px_3px_0_#119D73]
-          hover:shadow-[2px_2px_0_#119D73]
+          hover:shadow-[4px_4px_0_#119D73]
           active:shadow-none
           transition-all
           lg:text-sm
@@ -380,7 +316,13 @@ function About() {
       </div>
 
       {/* Trusted Companies */}
-      <Partners/>
+      <Partners />
+
+      {/* Gallaries */}
+      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-12 px-4">
+              <TopHeader top="Gallary" subHead="Our Gallaries" />
+              <Galary/>
+      </div>
     </div>
   );
 }

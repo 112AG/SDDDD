@@ -99,8 +99,8 @@ function Contact() {
       </div>
 
       {/* 3: Form */}
-      <div className="relative max-w-6xl px-4 ">
-        <div className="bg-[#003A78] rounded-[20px] max-w-6xl w-[100vw] sm:w-full xl:w-3xl 2xl:w-6xl mx-auto px-6 py-10 text-white shadow-lg relative z-40">
+      <div className="relative max-w-5xl px-4 ">
+        <div className="bg-[#003A78] rounded-[20px] max-w-4xl sm:w-full xl:w-3xl 2xl:w-6xl mx-auto px-6 py-10 text-white shadow-lg relative z-40">
           <h2 className="text-4xl font-bold text-center">Contact Us</h2>
           <p className="text-center text-green-400 mt-1 mb-8">
             We're Here to Help You Grow
@@ -111,9 +111,9 @@ function Contact() {
         <img
           src={TelephoneThree}
           alt=""
-          className="absolute -left-30 -top-30 z-9 hidden lg:inline"
+          className="absolute -left-26 -top-30 z-9 hidden lg:inline"
         />
-        <img src={Dailer} alt="" className="absolute -right-60 bottom-0 hidden lg:inline" />
+        <img src={Dailer} alt="" className="absolute -right-56 bottom-0 hidden lg:inline" />
       </div>
 
       {/* 4:Help */}
