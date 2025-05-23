@@ -17,6 +17,7 @@ import Testimonials from "../components/Testimonials";
 import Services from "../pages/services/Services";
 import ScrollToTop from "./ScrollToTop";
 import '../styles/index.css';
+import PageTransition from "./PageTransition";
  
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     >
       <Header/>
       <ScrollToTop/>
+      <PageTransition>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -43,6 +45,7 @@ function App() {
       <Route path="/services/:slug" element={<Services/>}/>
       <Route path="/emi-calculator" element={<Calculator/>}/>
     </Routes>
+    </PageTransition>
     <Footer/>
 
     </div>
