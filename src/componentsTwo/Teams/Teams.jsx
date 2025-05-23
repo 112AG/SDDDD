@@ -86,7 +86,12 @@ function Teams() {
                 />
               </div>
 
-              <div className="lg:h-[220px] lg:w-[300px] h-[full] w-[240px] bg-[#F4C520] rounded-[9.5px] absolute -bottom-18 left-[64%] p-4">
+<div
+  className={`transition-all duration-300 ease-in-out 
+    ${expanded[i] ? "lg:h-full h-full" : "lg:h-1/2 h-1/2"} 
+    lg:w-[300px] w-[240px] 
+    bg-[#F4C520] rounded-[9.5px] absolute -bottom-12 left-[64%] p-4 overflow-hidden`}
+>
                 <h3 className="font-bold text-[#000000] text-lg">{data.name}</h3>
                 <p className="md:text-sm text-[8px] font-semibold mb-1">
                   {data.position}
