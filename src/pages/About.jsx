@@ -125,8 +125,8 @@ function About() {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col gap-3 md:gap-6">
             <div>
-              <h1 className="text-[#003274] text-5xl font-bold">
-                About Company
+              <h1 className="text-[#003274] text-5xl font-bold text-center">
+                About Us
               </h1>
               <p className="py-4 text-[#5F5F5F] leading-6 text-[18px]">
                 SD Finance is dedicated to providing fast, transparent, and
@@ -222,7 +222,7 @@ function About() {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col gap-3 md:gap-6">
             <div>
-              <h1 className="text-[#003274] text-5xl font-bold">
+              <h1 className="text-[#003274] text-4xl sm:text-5xl font-bold text-center">
                 Our Achivements
               </h1>
               <p className="py-4 text-[#5F5F5F] leading-6 text-[18px]">
@@ -265,7 +265,7 @@ function About() {
         <div className="inline-block bg-[#d6fbe4] text-[#1AD079] text-sm font-medium px-4 py-1 rounded mb-6">
           Branches
         </div>
-        <h1 className="text-[#003274] text-5xl text-left font-bold">
+        <h1 className="text-[#003274] text-4xl sm:text-5xl text-left font-bold">
           Our Branches
         </h1>
         <p className="py-4 text-[#5F5F5F] leading-6 text-center text-[18px]">

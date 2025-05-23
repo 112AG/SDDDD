@@ -63,17 +63,17 @@ function Teams() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 md:gap-8 px-4 max-w-6xl">
+    <div className="flex flex-col items-center justify-center gap-4 md:gap-8 px-4 max-w-6xl overflow-x-hidden">
       <div className="inline-block bg-[#d6fbe4] text-[#1AD079] text-sm font-medium px-4 py-1 rounded mb-6">
-        About Us
+        Teams
       </div>
 
       <div className="max-w-6xl pb-18">
-        <h1 className="text-[#003274] text-5xl text-left font-bold">
-          Our Achievements
+        <h1 className="text-[#003274] text-4xl sm:text-5xl text-left font-bold">
+          Our Team Members
         </h1>
 
-        <div className="w-full pt-18 flex flex-wrap gap-[166px] lg:gap-x-[292px] xl:gap-x-[452px] gap-y-[98px] justify-start items-center">
+        <div className="w-full pt-18 flex flex-wrap gap-x-[366px] sm:gap-x-[486px] lg:gap-x-[292px] xl:gap-x-[452px] gap-y-[98px] justify-start items-center">
           {teamData.map((data, i) => (
             <div key={i} className="relative">
               <div className="lg:h-[280px] lg:w-[250px] h-[220px] w-[160px] bg-[#109E73] rounded-[9.5px]"></div>
@@ -86,13 +86,15 @@ function Teams() {
                 />
               </div>
 
-<div
-  className={`transition-all duration-300 ease-in-out 
-    ${expanded[i] ? "lg:h-full h-full" : "lg:h-[60%] h-[60%]"} 
+              <div
+                className={`transition-all duration-300 ease-in-out 
+    ${expanded[i] ? "lg:h-full h-[138%]" : "lg:h-[60%] h-[80%]"} 
     lg:w-[300px] w-[240px] 
     bg-[#F4C520] rounded-[9.5px] absolute -bottom-12 left-[64%] p-4 overflow-hidden`}
->
-                <h3 className="font-bold text-[#000000] text-lg">{data.name}</h3>
+              >
+                <h3 className="font-bold text-[#000000] text-lg">
+                  {data.name}
+                </h3>
                 <p className="md:text-sm text-[8px] font-semibold mb-1">
                   {data.position}
                 </p>
