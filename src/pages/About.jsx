@@ -1,8 +1,9 @@
 import React from "react";
-// import Icon from "../assets/SDFinanceServices/Icon.png";
-// import Icon2 from "../assets/SDFinanceServices/Icon2.png";
-// import Ornament from "../assets/SDFinanceServices/Ornament.png";
+import Icon from "../assets/SDFinanceServices/Icon.png";
+import Icon2 from "../assets/SDFinanceServices/Icon2.png";
+import Ornament from "../assets/SDFinanceServices/Ornament.png";
 import SDFinanceBanner from "../assets/AboutUs/SDFinanceBanner.svg";
+import SDFinanceLogo from "../assets/AboutUs/SDFinanceLogo.png";
 import SDFinanceOffice from "../assets/AboutUs/SDFInance-Office.png";
 import CrossArrow from "../assets/AboutUs/CrossArrow.png";
 import SDAchivements from "../assets/AboutUs/SDAchivements.png";
@@ -87,13 +88,13 @@ function About() {
       {/* Top Hero Section */}
       <div className="h-[80vh] w-full sm:h-screen relative overflow-hidden">
         <img
-          src={SDFinanceBanner}
+          src={SDFinanceLogo}
           alt="About Us Banner"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover absolute top-0 left-0"
         />
 
-        {/* <div className="w-full px-4 sm:w-[80%] md:w-[60%] max-w-6xl mx-auto flex flex-col items-center justify-center h-full relative">
-          <img src={Ornament} alt="Light" className="absolute" />
+        <div className="w-full px-4 sm:w-[80%] md:w-[70%]  max-w-6xl mx-auto flex flex-col items-center justify-center h-full relative">
+          <img src={Ornament} alt="Light" className="absolute top-[14%]" />
 
           <img
             src={Icon2}
@@ -106,7 +107,7 @@ function About() {
             alt="Icon"
             className="hidden sm:block h-[100px] w-[100px] absolute -left-[14%] top-[62%]"
           />
-        </div> */}
+        </div>
       </div>
 
       {/* About Company Section */}
