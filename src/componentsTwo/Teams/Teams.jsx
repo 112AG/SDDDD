@@ -88,7 +88,7 @@ function Teams() {
 
 <div
   className={`transition-all duration-300 ease-in-out 
-    ${expanded[i] ? "lg:h-full h-full" : "lg:h-1/2 h-1/2"} 
+    ${expanded[i] ? "lg:h-full h-full" : "lg:h-[60%] h-[60%]"} 
     lg:w-[300px] w-[240px] 
     bg-[#F4C520] rounded-[9.5px] absolute -bottom-12 left-[64%] p-4 overflow-hidden`}
 >
