@@ -16,7 +16,7 @@ export default function Footer() {
             <li><Link to="/" className={linkClass}>Home</Link></li>
             <li><Link to="/about" className={linkClass}>About Us</Link></li>
             <li><Link to="services/working-capital-loans" className={linkClass}>Our Services</Link></li>
-            <li><Link to="/testimonials" className={linkClass}>Testimonials</Link></li>
+            {/* <li><Link to="/testimonials" className={linkClass}>Testimonials</Link></li> */}
           </ul>
         </div>
 
@@ -25,8 +25,8 @@ export default function Footer() {
           <h3 className="font-semibold text-lg mb-3">Explore</h3>
           <ul className="space-y-2">
             <li><Link to="/faqs" className={linkClass}>FAQs</Link></li>
-            <li><Link to="/how-it-works" className={linkClass}>How It Works</Link></li>
-            <li><Link to="/qualifications" className={linkClass}>Qualifications</Link></li>
+            {/* <li><Link to="/how-it-works" className={linkClass}>How It Works</Link></li> */}
+            <li><Link to="/emi-calculator" className={linkClass}>EMI Calculator</Link></li>
             <li><Link to="/career" className={linkClass}>Career</Link></li>
           </ul>
         </div>

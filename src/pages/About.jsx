@@ -86,7 +86,7 @@ function About() {
   return (
     <div className="w-full bg-[#f6f8fb] flex flex-col items-center justify-center gap-16 sm:gap-32 pb-12">
       {/* Top Hero Section */}
-      <div className="h-[80vh] w-full sm:h-screen relative overflow-hidden">
+      <div className="h-[80vh] w-full sm:h-screen xl:h-[96vh] relative overflow-hidden">
         <img
           src={SDFinanceLogo}
           alt="About Us Banner"

@@ -73,7 +73,7 @@ function Teams() {
           Our Team Members
         </h1>
 
-        <div className="w-full pt-18 flex flex-wrap gap-x-[366px] sm:gap-x-[486px] lg:gap-x-[292px] xl:gap-x-[452px] gap-y-[98px] justify-start items-center">
+        <div className="w-full pt-18 flex flex-wrap gap-x-[366px] sm:gap-x-[486px] lg:gap-x-[292px] xl:gap-x-[402px] gap-y-[98px] justify-start items-center">
           {teamData.map((data, i) => (
             <div key={i} className="relative">
               <div className="lg:h-[280px] lg:w-[250px] h-[220px] w-[160px] bg-[#109E73] rounded-[9.5px]"></div>
